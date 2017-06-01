@@ -1,0 +1,16 @@
+Note 1:
+The transformer API is the only XML-standard way to transform from a DOM object to a serialized form (String in this case).
+
+https://stackoverflow.com/questions/315517/is-there-a-more-elegant-way-to-convert-an-xml-document-to-a-string-in-java-than
+https://en.wikipedia.org/wiki/Java_API_for_XML_Processing
+
+Note 2:
+xml Document(org.w3c.dom.Domument) can include comment.
+You can remove them by Factory.setIgnoringComments(true) method.
+
+Note 3:
+If the xml file is wrong, the error happens:
+The content of elements must consist of well-formed character data or markup.
+
+Note 4:
+Even your xml file don't have <?xml version=....?>, it will automatically added by default.
