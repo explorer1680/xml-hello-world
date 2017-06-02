@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/873247/how-do-i-copy-dom-nodes-from-one-document-to-another-in-java
+
+Note 1:
+
