@@ -14,3 +14,6 @@ The content of elements must consist of well-formed character data or markup.
 
 Note 4:
 Even your xml file don't have <?xml version=....?>, it will automatically added by default.
+
+Note 5:
+what is normalize for? //        document.getDocumentElement().normalize();

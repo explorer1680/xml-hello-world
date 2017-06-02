@@ -1,4 +1,4 @@
-package personal.xml.dom.printxml;
+package personal.xml.transform.printxml;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -20,7 +20,7 @@ public class PrintXMLTestRun {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, TransformerException {
 
-        ClassPathResource resource = new ClassPathResource("personal/xml/dom/printxml/doc.xml");
+        ClassPathResource resource = new ClassPathResource("personal/xml/transform/printxml/doc.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
@@ -28,6 +28,9 @@ public class PrintXMLTestRun {
 
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(resource.getInputStream());
+
+        //        document.getDocumentElement().normalize(); //what is this for?
+
 
         StringWriter stringWriter = new StringWriter();
         StreamResult streamResult = new StreamResult(stringWriter);
