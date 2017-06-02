@@ -1,0 +1,10 @@
+Note 1:
+Element is created by Document, even the root element, you have to append to Document again.
+
+but, you can't use on Document to create element and append to another Document.
+Exception in thread "main" org.w3c.dom.DOMException: WRONG_DOCUMENT_ERR: A node is used in a different document than the one that created it.
+
+Note 2:
+Indent and {http://xml.apache.org/xslt}indent-amount"
+
+Note 3:
