@@ -39,11 +39,18 @@ public class XpathTestRun {
 
         XPathFactory xPathFactory = XPathFactory.newInstance();
         xPath = xPathFactory.newXPath();
-        XPathExpression xPathExpression = xPath.compile("//d1");
+        XPathExpression xPathExpression = xPath.compile("//d1/e1");
 
-        Object expressionResult = xPathExpression.evaluate(document, XPathConstants.NODE);
+        Object expressionResult = xPathExpression.evaluate(document, XPathConstants.NODESET);
 
-        DOMSource domSource = new DOMSource((Node)expressionResult);
+
+        int length = ((NodeList)expressionResult).getLength();
+
+        System.out.println("---------------------" + length);
+
+        Node node2 = ((NodeList)expressionResult).item(1);
+
+        DOMSource domSource = new DOMSource(node2);
 
         StringWriter stringWriter = new StringWriter();
         StreamResult streamResult = new StreamResult(stringWriter);
