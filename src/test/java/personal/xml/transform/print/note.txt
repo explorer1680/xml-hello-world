@@ -17,3 +17,7 @@ Even your xml file don't have <?xml version=....?>, it will automatically added 
 
 Note 5:
 what is normalize for? //        document.getDocumentElement().normalize();
+
+
+Note 6:
+https://stackoverflow.com/questions/1706493/java-net-malformedurlexception-no-protocol
