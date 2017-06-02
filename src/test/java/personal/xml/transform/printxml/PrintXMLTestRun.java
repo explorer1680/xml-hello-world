@@ -20,7 +20,7 @@ public class PrintXMLTestRun {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, TransformerException {
 
-        ClassPathResource resource = new ClassPathResource("personal/xml/transform/printxml/doc.xml");
+        ClassPathResource resource = new ClassPathResource("personal/xml/transform/printxml/print.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
