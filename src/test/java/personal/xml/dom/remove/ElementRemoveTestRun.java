@@ -36,7 +36,11 @@ public class ElementRemoveTestRun {
         StringWriter writer = new StringWriter();
         StreamResult result = new StreamResult(writer);
 
-        DOMSource source = new DOMSource((Node) evaluateResult);
+        Node node = (Node) evaluateResult;
+
+        node.getParentNode().removeChild(node);
+
+        DOMSource source = new DOMSource(doc);
 
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
