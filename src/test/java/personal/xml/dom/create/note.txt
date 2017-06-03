@@ -8,3 +8,5 @@ Note 2:
 Indent and {http://xml.apache.org/xslt}indent-amount"
 
 Note 3:
+You can't insert same comment twice, the last one will win.
+You have to create 2 comment.

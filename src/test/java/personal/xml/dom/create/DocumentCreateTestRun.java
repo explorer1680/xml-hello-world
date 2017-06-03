@@ -27,8 +27,8 @@ public class DocumentCreateTestRun {
         Element root = document1.createElement("root");
         document1.appendChild(root);
 
-        Comment comment = document1.createComment("this is a comment");
-        document1.insertBefore(comment, root);
+        Comment comment1 = document1.createComment("this is a comment");
+        document1.insertBefore(comment1, root);
 
         Element abc = document1.createElement("abc");
         root.appendChild(abc);
@@ -37,6 +37,8 @@ public class DocumentCreateTestRun {
 
         Text text = document1.createTextNode("this is a test.");
         abc.insertBefore(text, abc.getLastChild());
+        Comment comment2 = document1.createComment("this is a comment2");
+        root.appendChild(comment2);
 
 
         DOMSource source = new DOMSource(document1);
