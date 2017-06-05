@@ -33,8 +33,11 @@ public class ElementCopyTestRun {
         Element root2 = destination.createElement("root2");
         destination.appendChild(root2);
 
-        Node newNode = ((Node)copedNode).cloneNode(true);
-        destination.adoptNode(newNode);
+//        Node newNode = ((Node)copedNode).cloneNode(true);
+//        destination.adoptNode(newNode);
+
+        Node newNode = destination.importNode((Node)copedNode, true);
+
         destination.getDocumentElement().appendChild(newNode);
 
 
