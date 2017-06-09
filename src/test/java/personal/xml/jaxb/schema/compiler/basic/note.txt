@@ -1,0 +1,3 @@
+https://www.thoughts-on-java.org/generate-your-jaxb-classes-in-second/
+
+xjc -d C:\IntellijIDEAProjects\xml-hello-world\src\test\java -p personal.xml.jaxb.schema.compiler.basic C:\IntellijIDEAProjects\xml-hello-world\src\test\resources\jaxb\po.xsd
