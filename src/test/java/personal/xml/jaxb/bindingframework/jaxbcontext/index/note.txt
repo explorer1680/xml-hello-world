@@ -1,0 +1,4 @@
+jaxb.index content:
+http://docs.oracle.com/javaee/7/api/javax/xml/bind/JAXBContext.html#newInstance-java.lang.String-java.lang.ClassLoader-
+
+Note: there should be only one JaxbContext in application.
