@@ -1,4 +1,11 @@
 jaxb.index content:
 http://docs.oracle.com/javaee/7/api/javax/xml/bind/JAXBContext.html#newInstance-java.lang.String-java.lang.ClassLoader-
 
-Note: there should be only one JaxbContext in application.
+Note 1: there should be only one JaxbContext in application.
+
+Note 2:
+What should be in the package if the JAXBContext.newInstance(String contextPath) is used:
+
+A schema-derived Java packages, getting from running xjc against schema xsd, have a ObjectFactory class, this class is used get a new JAXBContext.
+
+If, it is not a schema-derived java package, a jaxb.index resource file, list the non-schema-derived classes, should be used.

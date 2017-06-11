@@ -1,0 +1,3 @@
+Note 1:
+A schema-derived Java packages, getting from running xjc against schema xsd, have a ObjectFactory class, this class is used get a new JAXBContext.
+If, it is not a schema-derived java package, a jaxb.index resource file, list the non-schema-derived classes, should be used.
