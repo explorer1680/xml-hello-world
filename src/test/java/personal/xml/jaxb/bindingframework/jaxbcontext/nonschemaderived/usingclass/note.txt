@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/11520724/xmlrootelement-versus-xmltype
+in Airplane, it seems that @XmlRootElement is same as @XmlType
