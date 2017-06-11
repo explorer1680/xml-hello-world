@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.jaxbcontext.objectfactory;
+package personal.xml.jaxb.bindingframework.jaxbcontext.schemaderived.objectfactory;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

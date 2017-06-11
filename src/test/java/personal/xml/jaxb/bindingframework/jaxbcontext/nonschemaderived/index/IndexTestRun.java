@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.jaxbcontext.index;
+package personal.xml.jaxb.bindingframework.jaxbcontext.nonschemaderived.index;
 
 import java.io.StringWriter;
 
@@ -8,7 +8,7 @@ import javax.xml.bind.Marshaller;
 
 public class IndexTestRun {
 	public static void main(String[] args) throws JAXBException{
-		JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.jaxbcontext.index");
+		JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.jaxbcontext.nonschemaderived.index");
 		
 		Marshaller marshaller = context.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);

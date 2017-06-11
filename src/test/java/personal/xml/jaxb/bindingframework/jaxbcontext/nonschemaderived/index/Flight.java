@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.jaxbcontext.index;
+package personal.xml.jaxb.bindingframework.jaxbcontext.nonschemaderived.index;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
