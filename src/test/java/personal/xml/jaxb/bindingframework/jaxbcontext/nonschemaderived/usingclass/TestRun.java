@@ -9,6 +9,7 @@ import javax.xml.bind.Marshaller;
 public class TestRun {
 	public static void main(String[] args) throws JAXBException{
 		JAXBContext context = JAXBContext.newInstance(Flight.class);
+//		JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.jaxbcontext.nonschemaderived.usingclass");
 		
 		Marshaller marshaller = context.createMarshaller();
 		
