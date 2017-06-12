@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee>
+    <employeeId>1</employeeId>
+    <name>Tomcat</name>
+    <address>
+        <addressLine1>address line 1</addressLine1>
+        <addressLine2>address line 2</addressLine2>
+        <city>Toronto</city>
+        <state>ON</state>
+        <country>Canada</country>
+        <zipCode>M2H 1Y7</zipCode>
+    </address>
+    <salary>abc</salary>
+</employee>
