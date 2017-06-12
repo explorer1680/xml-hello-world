@@ -1,0 +1,2 @@
+It seems that jaxb has some implementation as JAXB provider, following is one of them:
+https://wiki.eclipse.org/EclipseLink/Examples/MOXy
