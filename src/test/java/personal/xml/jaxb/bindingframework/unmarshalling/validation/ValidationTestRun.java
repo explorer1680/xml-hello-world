@@ -18,7 +18,11 @@ public class ValidationTestRun {
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         Schema schema = sf.newSchema(new ClassPathResource("personal/xml/jaxb/bindingframework/unmarshalling/validation/employee.xsd").getFile());
 
+
+
         Unmarshaller unmarshaller = context.createUnmarshaller();
+
+        unmarshaller.setSchema(schema);
         unmarshaller.setEventHandler(new EmployeeValidationEventHandler());
 
         Employee employee = (Employee) unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/unmarshalling/validation/employee.xml").getInputStream());

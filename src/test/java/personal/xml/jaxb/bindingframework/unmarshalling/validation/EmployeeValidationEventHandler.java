@@ -17,6 +17,6 @@ public class EmployeeValidationEventHandler implements ValidationEventHandler {
         System.out.println("    OBJECT:  " + event.getLocator().getObject());
         System.out.println("    NODE:  " + event.getLocator().getNode());
         System.out.println("    URL:  " + event.getLocator().getURL());
-        return true;
+        return false;
     }
 }

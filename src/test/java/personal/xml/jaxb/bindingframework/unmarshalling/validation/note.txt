@@ -8,3 +8,6 @@ If you want to create a file, you should use FileSystemResource.
 
 Note 3:
 If the ValidationEventHandler.handleEvent(ValidationEvent event) return true, the process continue, if it return false, the process will stop and throw exception.
+
+
+https://examples.javacodegeeks.com/core-java/xml/bind/jaxb-schema-validation-example/
