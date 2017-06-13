@@ -1,0 +1,4 @@
+StAX (Streaming API for XML)
+seems in javax.xml.stream package.
+
+https://docs.oracle.com/cd/E13222_01/wls/docs100/xml/stax.html

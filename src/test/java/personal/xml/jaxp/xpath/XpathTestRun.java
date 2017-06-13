@@ -1,4 +1,4 @@
-package personal.xml.xpath;
+package personal.xml.jaxp.xpath;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -19,7 +19,7 @@ import java.io.StringWriter;
 public class XpathTestRun {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException, TransformerException {
 
-        ClassPathResource resource = new ClassPathResource("personal/xml/xpath/xpath.xml");
+        ClassPathResource resource = new ClassPathResource("personal/xml/jaxp/xpath/xpath.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();

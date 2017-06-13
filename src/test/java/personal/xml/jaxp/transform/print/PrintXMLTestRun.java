@@ -1,4 +1,4 @@
-package personal.xml.transform.print;
+package personal.xml.jaxp.transform.print;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -20,7 +20,7 @@ public class PrintXMLTestRun {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, TransformerException {
 
-        ClassPathResource resource = new ClassPathResource("personal/xml/transform/print/print.xml");
+        ClassPathResource resource = new ClassPathResource("personal/xml/jaxp/transform/print/print.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 

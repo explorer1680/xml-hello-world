@@ -1,4 +1,4 @@
-package personal.xml.dom.remove;
+package personal.xml.jaxp.dom.remove;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -22,7 +22,7 @@ public class ElementRemoveTestRun {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(new ClassPathResource("personal/xml/dom/remove/remove.xml").getInputStream());
+        Document doc = builder.parse(new ClassPathResource("personal/xml/jaxp/dom/remove/remove.xml").getInputStream());
 
 
 

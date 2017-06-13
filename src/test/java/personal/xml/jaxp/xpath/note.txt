@@ -1,0 +1,6 @@
+Note 1:
+to pretty print, you have to using Xpath to remove space between tags.
+then, setup transformer to do the job.
+
+https://xml.apache.org/xalan-j/xpath_apis.html
+Xpath belong to JAXP

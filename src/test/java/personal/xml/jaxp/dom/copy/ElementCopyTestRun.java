@@ -1,4 +1,4 @@
-package personal.xml.dom.copy;
+package personal.xml.jaxp.dom.copy;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -21,7 +21,7 @@ public class ElementCopyTestRun {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document source = builder.parse(new ClassPathResource("personal/xml/dom/copy/copy.xml").getInputStream());
+        Document source = builder.parse(new ClassPathResource("personal/xml/jaxp/dom/copy/copy.xml").getInputStream());
 
         XPathFactory xPathFactory = XPathFactory.newInstance();
         XPath xPath = xPathFactory.newXPath();

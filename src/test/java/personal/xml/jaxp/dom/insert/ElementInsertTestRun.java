@@ -1,4 +1,4 @@
-package personal.xml.dom.insert;
+package personal.xml.jaxp.dom.insert;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -11,7 +11,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -23,7 +22,7 @@ public class ElementInsertTestRun {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(new ClassPathResource("personal/xml/dom/insert/insert.xml").getInputStream());
+        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/dom/insert/insert.xml").getInputStream());
 
 
 

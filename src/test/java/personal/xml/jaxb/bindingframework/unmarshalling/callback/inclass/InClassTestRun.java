@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.dom.DOMSource;
 import java.io.IOException;
 
-public class TransformSourceTestRun {
+public class InClassTestRun {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, JAXBException {
         ClassPathResource xmlInstance = new ClassPathResource("personal/xml/jaxb/bindingframework/unmarshalling/callback/inclass/employee.xml");

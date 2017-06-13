@@ -1,4 +1,4 @@
-package personal.xml.dom.pretty.print;
+package personal.xml.jaxp.dom.pretty.print;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -20,7 +20,7 @@ public class PrettyPrintTestRun {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(new ClassPathResource("personal/xml/dom/pretty/print/pretty.xml").getInputStream());
+        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/dom/pretty/print/pretty.xml").getInputStream());
 
         XPathFactory xPathFactory = XPathFactory.newInstance();
         XPath xPath = xPathFactory.newXPath();
