@@ -27,14 +27,10 @@ public class ListenerTestRun {
         XMLStreamReader streamReader = inputFactory.createXMLStreamReader(xmlInstance.getInputStream());
 
         Unmarshaller unmarshaller = context.createUnmarshaller();
+        unmarshaller.setListener(new LocationListener());
 
         Employee employee = (Employee)unmarshaller.unmarshal(streamReader);
 
         System.out.println(employee);
-
     }
-
-
-
-
 }
