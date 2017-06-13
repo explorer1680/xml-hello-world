@@ -1,0 +1,7 @@
+the validation:
+setSchema(javax.xml.validation.Schema)
+ is JAXP 1.3 validation
+
+
+Note 1:
+You can also add ValidationEventHandler in this test case.
