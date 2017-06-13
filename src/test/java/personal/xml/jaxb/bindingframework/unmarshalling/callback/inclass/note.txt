@@ -1,0 +1,9 @@
+Note 1: the call back method don't belong to any interface or superclass.
+I guess it is called by Unmarshaller.
+
+Note 2: it is called just within the class.
+
+Note 3: you can see the print out by the class is:
+Employee{employeeId=1, name='Tomcat', address=null, salary=null}
+
+if you want to have salary, you should change the order in employee.xml
