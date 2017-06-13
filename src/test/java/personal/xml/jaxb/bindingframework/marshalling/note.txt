@@ -1,0 +1,8 @@
+Note 1:
+For the Marshaller, the overloading method allow to output java object to file, dom tree etc.
+
+Note 2:
+For the marshal method, the first parameter is Object, but, it should be a javax.xml.bind.JAXBElement, determined by JAXBIntrospector.isElement() method
+There exist two mechanisms to enable marshalling an instance that is not a JAXB element:
+One method is to wrap the instance as the value of a javax.xml.bind.JAXBElement instance, and pass the wrapper element as the first parameter to a marshal method.
+For java to schema binding, it is also possible to simply annotate the instance's class with the appropriate program annotation, @XmlElementRoot.
