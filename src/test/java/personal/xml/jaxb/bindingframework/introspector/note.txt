@@ -1,0 +1,5 @@
+Note 1:
+to make Cup is element, you have to get JAXBContext from Cup.class.
+
+Note 2:
+Even table is not an element, you can introspector.getValue on it, and return that object.
