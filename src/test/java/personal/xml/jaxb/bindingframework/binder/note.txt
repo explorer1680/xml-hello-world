@@ -1,0 +1,1 @@
+http://blog.bdoughan.com/2010/09/jaxb-xml-infoset-preservation.html
