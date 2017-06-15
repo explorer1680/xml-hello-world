@@ -1,1 +1,10 @@
 http://blog.bdoughan.com/2010/09/jaxb-xml-infoset-preservation.html
+
+Note 1:
+There is no @XmlRootElement or @XmlType on Address class and PhoneNumber class.
+
+Note 2:
+The Binder implementation from JDK not working on this example. You have to use eclipseLink Moxy.
+
+Note 3:
+jaxb.properties file is for Moxy.
