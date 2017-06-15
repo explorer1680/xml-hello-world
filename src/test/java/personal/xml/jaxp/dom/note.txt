@@ -1,3 +1,5 @@
 https://en.wikipedia.org/wiki/Java_API_for_XML_Processing
 
 DOM interface in org.w3c.dom package
+
+for the DocumentBuilder, the method parse(String) and parse(InputStream) is different.
