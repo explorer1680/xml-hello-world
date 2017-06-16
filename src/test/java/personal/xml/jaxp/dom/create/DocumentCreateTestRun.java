@@ -19,9 +19,6 @@ public class DocumentCreateTestRun {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document1 = builder.newDocument();
-        Document doc = builder.newDocument();
-
-
 
         Element root = document1.createElement("root");
         document1.appendChild(root);
@@ -35,24 +32,25 @@ public class DocumentCreateTestRun {
         abc.setAttribute("ff", "123");
 
         Text text = document1.createTextNode("this is a test.");
+//        abc.appendChild(text);
+        
+        System.out.println(abc.getLastChild());
         abc.insertBefore(text, abc.getLastChild());
+        
         Comment comment2 = document1.createComment("this is a comment2");
         root.appendChild(comment2);
 
-
         DOMSource source = new DOMSource(document1);
 
-        StringWriter stringWriter = new StringWriter();
-        StreamResult streamResult = new StreamResult(stringWriter);
-
+//        StringWriter stringWriter = new StringWriter();
+//        StreamResult streamResult = new StreamResult(stringWriter);
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-        transformer.transform(source, streamResult);
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+        transformer.transform(source, new StreamResult(System.out));
 
-        System.out.println(stringWriter);
+//        System.out.println(stringWriter);
     }
-
 }
