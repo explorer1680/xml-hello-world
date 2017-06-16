@@ -1,0 +1,4 @@
+1. there are rules for mapping XML Names to java identifier.
+
+2. xml namespace are map to java package.
+question: "java element class" vs "java value class"
