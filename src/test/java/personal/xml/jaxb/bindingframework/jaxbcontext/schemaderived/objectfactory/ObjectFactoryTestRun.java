@@ -1,27 +1,28 @@
 package personal.xml.jaxb.bindingframework.jaxbcontext.schemaderived.objectfactory;
 
-import java.io.StringWriter;
-
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import java.io.StringWriter;
 
 public class ObjectFactoryTestRun {
-	
-	public static void main(String[] args) throws JAXBException{
-		
-		JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.jaxbcontext.schemaderived.objectfactory");
-		
-		Marshaller marshaller = context.createMarshaller();
-		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		
-		Flight ac031 = new Flight("AC032", "Boeing 777");
-		
-		StringWriter sw = new StringWriter();
-		
-		marshaller.marshal(ac031, sw);
-		
-		System.out.println(sw.toString());
-	}
+    public static void main(String[] args) throws JAXBException {
+        JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.jaxbcontext.schemaderived.objectfactory");
 
+        Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+        FlightType ac032 = new FlightType();
+        ac032.setName("AC 032");
+        ac032.setAirplanetype("AirBus 340");
+
+        JAXBElement<FlightType> flight = new ObjectFactory().createFlight(ac032);
+
+        StringWriter sw = new StringWriter();
+
+        marshaller.marshal(flight, sw);
+
+        System.out.println(sw.toString());
+    }
 }
