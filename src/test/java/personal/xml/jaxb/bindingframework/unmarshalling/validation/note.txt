@@ -11,3 +11,6 @@ If the ValidationEventHandler.handleEvent(ValidationEvent event) return true, th
 
 
 https://examples.javacodegeeks.com/core-java/xml/bind/jaxb-schema-validation-example/
+
+Note 4:
+the marshaller and ummarshaller both have validation.
