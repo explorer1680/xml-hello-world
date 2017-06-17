@@ -24,13 +24,13 @@ public class ValidationTestRun {
 
         marshaller.setSchema(schema);
 
-        Address address = new Address("street", "city", "province", "M1R 2E3");
+        Address address = new Address("street", "city", "province", "12345");
 
         StringWriter stringWriter = new StringWriter();
 
-        marshaller.marshal(address, stringWriter);
+        marshaller.marshal(address, System.out);
 
-        System.out.println(stringWriter);
+//        System.out.println(stringWriter);
 
     }
 }
