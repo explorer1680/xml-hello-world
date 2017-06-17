@@ -40,10 +40,11 @@ public class PrettyPrintTestRun {
         StreamResult streamResult = new StreamResult(stringWriter);
 
         TransformerFactory tf = TransformerFactory.newInstance();
+        tf.setAttribute("indent-number", new Integer(4));
         Transformer transformer = tf.newTransformer();
 
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+//        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         transformer.transform(domSource,streamResult);
 
         System.out.println(stringWriter);

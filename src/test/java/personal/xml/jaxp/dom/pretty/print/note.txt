@@ -1,2 +1,22 @@
 Note 1:
 the space in element <c> after "adadf" can't be clean.
+
+Note 2:
+another way to indent:
+is to call setAttribute("indent-number", new Integer(2)) on TransformerFactory.
+
+https://stackoverflow.com/questions/1384802/java-how-to-indent-xml-generated-by-transformer
+
+Note 3:
+Why using setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2") on Transformer will indent?
+the SetOutPutProperty of Transformer:
+http://www.enseignement.polytechnique.fr/informatique/Java/1.8/javax/xml/transform/Transformer.html#setOutputProperty-java.lang.String-java.lang.String-
+
+the URI: http://xml.apache.org/xslt related with apache project:
+https://xml.apache.org/mirrors.cgi
+
+it is has "xalan"
+
+the Transformer class in abstract class, it has a com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl extends Transformer, in rt.jar
+by debug, this class is called.
+
