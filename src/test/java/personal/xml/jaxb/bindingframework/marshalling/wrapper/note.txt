@@ -1,3 +1,5 @@
 Question:
 How to create a test case that using JAXBElement as first parameter to marshal method?
 It seems that you have to put @XmlRootElement to Product class.
+You need to use ObjectFactory from xjc command.
+Look at schemaderived.objectfactory package.
