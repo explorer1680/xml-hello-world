@@ -7,7 +7,7 @@ import javax.xml.bind.JAXBIntrospector;
 public class TestRun {
     public static void main(String[] args) throws JAXBException {
 
-        JAXBContext context = JAXBContext.newInstance(Cup.class);
+        JAXBContext context = JAXBContext.newInstance(Cup.class, Table.class);
         JAXBIntrospector introspector = context.createJAXBIntrospector();
 
         Table table = new Table("white");
@@ -19,6 +19,6 @@ public class TestRun {
         System.out.println("object from Cup is a JAXB element? " + introspector.isElement(cup));
 
         System.out.println(introspector.getElementName(table));
-        System.out.println(introspector.getValue(table));
+        System.out.println(JAXBIntrospector.getValue(table));
     }
 }
