@@ -1,6 +1,8 @@
 https://stackoverflow.com/questions/11520724/xmlrootelement-versus-xmltype
+
 Note 1:
 in Airplane, it seems that @XmlRootElement is same as @XmlType
+Actually, you don't need any of them, nor @XmlAccessorType(XmlAccessType.FIELD).
 
 Note 2:
 If you using jaxb.index, you need only Flight class in that file.
