@@ -1,11 +1,3 @@
 https://www.thoughts-on-java.org/generate-your-jaxb-classes-in-second/
 
 xjc -d C:\IntellijIDEAProjects\xml-hello-world\src\test\java -p personal.xml.jaxb.schema.compiler.basic C:\IntellijIDEAProjects\xml-hello-world\src\test\resources\jaxb\po.xsd
-
-Note 1:
-The root element in po.xml has to be named "purchaseOrder", other names like "purchaseOrder1" not working.
-
-
-Note 2:
-There are many element defined in po.xml, and there are corresponding java element representation in objectFactory class,
-any of them can be passed to unmarshaller, and return a corresponding java object.
