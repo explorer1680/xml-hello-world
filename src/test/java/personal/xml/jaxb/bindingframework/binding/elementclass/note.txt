@@ -1,0 +1,7 @@
+No, this example don't have same AComplexType class as described on 5.6.2:
+
+public value class AComplexType {
+    public class ASimpleElement extends javax.xml.bind.JAXBElement<Integer> {
+}
+...
+};

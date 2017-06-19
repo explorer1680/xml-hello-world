@@ -1,0 +1,13 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="complex" type="AComplexType"/>
+
+    <xsd:complexType name="AComplexType" mixed="true">
+        <xsd:sequence>
+            <xsd:element name="ASimpleElement" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
+
+
