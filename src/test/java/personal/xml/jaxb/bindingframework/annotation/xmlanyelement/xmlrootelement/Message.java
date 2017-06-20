@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.annotation.xmlanyelement;
+package personal.xml.jaxb.bindingframework.annotation.xmlanyelement.xmlrootelement;
 
 import javax.xml.bind.annotation.*;
 

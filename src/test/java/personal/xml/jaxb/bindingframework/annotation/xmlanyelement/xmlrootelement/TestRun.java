@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.annotation.xmlanyelement;
+package personal.xml.jaxb.bindingframework.annotation.xmlanyelement.xmlrootelement;
 
 import org.springframework.core.io.ClassPathResource;
 
@@ -9,10 +9,10 @@ import java.io.IOException;
 
 public class TestRun {
     public static void main(String[] args) throws JAXBException, IOException {
-        JAXBContext context = JAXBContext.newInstance(Message.class, Product.class);
+        JAXBContext context = JAXBContext.newInstance(Message.class, Customer.class, Product.class);
 
         Unmarshaller unmarshaller = context.createUnmarshaller();
-        Message message = (Message) unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/annotation/xmlanyelement/customer.xml").getInputStream());
+        Message message = (Message) unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/annotation/xmlanyelement/xmlrootelement/customer.xml").getInputStream());
 
         System.out.println(message.getBody() instanceof Customer);
 
