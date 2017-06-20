@@ -1,0 +1,2 @@
+To generate xsd from java class, using following command:
+schemagen Employee.java Address.java
