@@ -1,7 +1,19 @@
-No, this example don't have same AComplexType class as described on 5.6.2:
+Note 1: compared with "compared" package,
 
-public value class AComplexType {
-    public class ASimpleElement extends javax.xml.bind.JAXBElement<Integer> {
-}
-...
-};
+one more class is added:
+
+public class Complex extends JAXBElement<AComplexType>
+
+Note 2:
+the class for this test case are also coming from xjc command,
+compared with elementinstance, the unmarshalled object can be cast to Complex.
+
+Note 3:
+compared with the class annotated with @XmlRootElement, the Complex class's structure is different, it is a JAXBElement<AComplexTpye>
+
+
+Note 4:
+Compared with the example in jaxbcontext.schemaderived.objectfactory, the new created "Complex" object is ready to passed to marshaller.
+
+Note 5:
+Note how to create a new Complex object.

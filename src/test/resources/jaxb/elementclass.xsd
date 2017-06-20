@@ -1,8 +1,19 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0"
+>
+
+    <!--without following annotation, the generated class is in compared package-->
+    <xsd:annotation>
+        <xsd:appinfo>
+            <jxb:globalBindings generateElementClass="true"/>
+        </xsd:appinfo>
+    </xsd:annotation>
 
     <xsd:element name="complex" type="AComplexType"/>
 
-    <xsd:complexType name="AComplexType" mixed="true">
+    <xsd:complexType name="AComplexType">
+
         <xsd:sequence>
             <xsd:element name="ASimpleElement" type="xsd:int"/>
         </xsd:sequence>
