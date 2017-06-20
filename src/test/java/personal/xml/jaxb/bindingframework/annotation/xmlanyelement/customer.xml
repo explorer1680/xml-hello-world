@@ -1,0 +1,9 @@
+<message to="john@example.com" from="jane@example.com">
+    <customer>
+        <name>Sue Smith</name>
+        <address>
+            <street>123 A Street</street>
+            <city>Any Town</city>
+        </address>
+    </customer>
+</message>

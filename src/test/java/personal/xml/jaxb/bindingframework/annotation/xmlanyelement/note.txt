@@ -1,0 +1,25 @@
+http://blog.bdoughan.com/2010/08/using-xmlanyelement-to-build-generic.html
+
+Note 1:
+When customer annotated by @XmlRootElement, the test:
+message.getBody() instanceof Customer
+return true.
+
+message.getBody() return personal.xml.jaxb.bindingframework.annotation.xmlanyelement.Customer
+
+If it is not annotated with @XmlRootElement, or it is not registered with JAXBContent.newInstance(...)
+the test:
+message.getBody() instanceof Customer
+return false.
+
+message.getBody() return class: com.sun.org.apache.xerces.internal.dom.ElementNSImpl
+
+Note 2:
+When
+@XmlAnyElement(lax = false)
+
+the test:
+message.getBody() instanceof Customer
+return false.
+
+message.getBody() return class: com.sun.org.apache.xerces.internal.dom.ElementNSImpl
