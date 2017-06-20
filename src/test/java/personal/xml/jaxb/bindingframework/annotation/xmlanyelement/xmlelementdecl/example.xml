@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <foo>
+        <fooProp>Hello</fooProp>
+    </foo>
+    <bar>
+        <barProp>World</barProp>
+    </bar>
+    <other>
+        <a>A</a>
+        <b>B</b>
+    </other>
+</root>
