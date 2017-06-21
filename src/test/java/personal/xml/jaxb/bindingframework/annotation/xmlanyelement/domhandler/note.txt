@@ -1,0 +1,18 @@
+Note 1:
+If A.class in not in JAXBContext.newInstance(), the element "a" will be a dom.ElementNSImpl.
+Even B.class and ObjectFactory.class is not in JAXBContext.newInstance(), the element "b" is always a JAXBElement.
+
+Note 2:
+The interface "DomHandler" is generic.
+
+Note 3:
+If you don't have value="CHandler", the default returned object will be:
+com.sun.org.apache.xerces.internal.dom.ElementNSImpl
+If you have defined value="CHandler", the returned object will comes from method:
+String getElement(StreamResult rt)
+
+Note 4:
+It seems that if want to let the handler do the unmarshal and marshal,
+the object returned from "String getElement(StreamResult rt)" must have @XmlRootElement annotation.
+
+If you don't know to marshal it, it is ok to return any thing.

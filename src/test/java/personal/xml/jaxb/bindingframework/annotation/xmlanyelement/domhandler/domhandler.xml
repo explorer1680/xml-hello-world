@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <a>
+        <elementA>Hello</elementA>
+    </a>
+    <b>
+        <elementB>World</elementB>
+    </b>
+    <C>
+        <d>D</d>
+        <e>E</e>
+    </C>
+</root>
