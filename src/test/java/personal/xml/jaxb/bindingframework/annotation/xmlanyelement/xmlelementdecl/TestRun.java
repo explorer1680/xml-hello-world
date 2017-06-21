@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class TestRun {
     public static void main(String[] args) throws JAXBException, IOException {
-        JAXBContext context = JAXBContext.newInstance(Root.class, Foo.class, ObjectFactory.class, Other.class);
+        JAXBContext context = JAXBContext.newInstance(Root.class, Foo.class, ObjectFactory.class);
 
         Unmarshaller unmarshaller = context.createUnmarshaller();
         Root root = (Root)unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/annotation/xmlanyelement/xmlelementdecl/example.xml").getInputStream());
