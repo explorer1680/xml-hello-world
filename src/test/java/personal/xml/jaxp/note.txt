@@ -5,3 +5,30 @@ DOM
 SAX
 StAX
 In addition to the parsing interfaces, the API provides an XSLT interface to provide data and structural transformations on an XML document.
+
+StAX was designed as a median between the DOM and SAX interface.
+In its metaphor, the programmatic entry point is a cursor that represents a point within the document.
+The application moves the cursor forward - 'pulling' the information from the parser as it needs.
+This is different from an event based API - such as SAX - which 'pushes' data to the application - requiring the application to maintain state between events as necessary to keep track of location within the document.
+
+The XML Stylesheet Language for Transformations, or XSLT, allows for conversion of an XML document into other forms of data.
+JAXP provides interfaces in package javax.xml.transform allowing applications to invoke an XSLT transformation.
+This interface was originally called TrAX (Transformation API for XML).
+
+XSL vs XSLT:
+https://www.quora.com/What-is-the-difference-between-XSL-and-XSLT
+
+XSL is actually an ambiguous short-hand which can refer to either (or both) of two distinct but related technologies: XSL-FO and XSLT.
+XSL stands for eXtensible Stylesheet Language.
+It originally started out as a single specification, but was later broken up into these two separate standards.
+
+
+https://www.w3.org/Style/XSL/
+
+XSL is a family of recommendations for defining XML document transformation and presentation. It consists of three parts:
+
+XSL Transformations (XSLT): a language for transforming XML;
+
+The XML Path Language (XPath): an expression language used by XSLT (and many other languages) to access or refer to parts of an XML document;
+
+XSL Formatting Objects (XSL-FO): an XML vocabulary for specifying formatting semantics.
