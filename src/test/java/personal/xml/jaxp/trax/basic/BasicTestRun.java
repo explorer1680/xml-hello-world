@@ -7,7 +7,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 
-public class NormalTestRun {
+public class BasicTestRun {
     public static void main(String[] args) throws TransformerException, IOException {
 
 
