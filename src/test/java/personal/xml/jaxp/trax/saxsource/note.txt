@@ -1,2 +1,5 @@
 What is the purpose for the xaxsource?
 In the test case basic, we can transformer the file, why we need this test?
+
+Does JAXB uses SAX or DOM internally?
+https://stackoverflow.com/questions/9923326/does-jaxb-uses-sax-or-dom-internally
