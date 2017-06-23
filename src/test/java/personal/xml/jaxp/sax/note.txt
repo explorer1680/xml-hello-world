@@ -1,3 +1,6 @@
 SAX (Simple API for XML)
-
 seems in javax.xml.parsers package
+
+
+Difference between SAXParser and XMLReader:
+https://stackoverflow.com/questions/13878998/difference-between-saxparser-and-xmlreader
