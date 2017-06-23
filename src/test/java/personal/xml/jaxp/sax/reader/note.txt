@@ -1,0 +1,2 @@
+Difference between SAXParser and XMLReader:
+https://stackoverflow.com/questions/13878998/difference-between-saxparser-and-xmlreader
