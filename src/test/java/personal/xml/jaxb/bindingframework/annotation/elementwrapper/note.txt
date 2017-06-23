@@ -1,2 +1,5 @@
 Note 1:
 how the format different with/without @XmlElementWrapper(name="documents")
+
+Note 2:
+It seems that you put another layer between Configuration and Document may have same result as @XmlElementWrapper.
