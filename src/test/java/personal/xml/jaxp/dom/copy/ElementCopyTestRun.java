@@ -43,7 +43,7 @@ public class ElementCopyTestRun {
 
 
 
-        xPath = XPathFactory.newInstance().newXPath();
+//        xPath = XPathFactory.newInstance().newXPath();
         NodeList nodeList = (NodeList) xPath.evaluate("//text()[normalize-space()='']",
                 destination,
                 XPathConstants.NODESET);
