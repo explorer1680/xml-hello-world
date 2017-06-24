@@ -4,6 +4,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -12,9 +13,10 @@ import java.io.IOException;
 
 public class ReaderTestRun {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        SAXParser parser = factory.newSAXParser();
-        XMLReader reader = parser.getXMLReader();
+//        SAXParserFactory factory = SAXParserFactory.newInstance();
+//        SAXParser parser = factory.newSAXParser();
+//        XMLReader reader = parser.getXMLReader();
+        XMLReader reader = XMLReaderFactory.createXMLReader();
 
         EmployeeHandler employeeHandler = new EmployeeHandler();
         reader.setContentHandler(employeeHandler);
