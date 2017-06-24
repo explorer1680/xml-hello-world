@@ -20,29 +20,29 @@ public class DocumentCreateTestRun {
     public static void main(String[] args) throws ParserConfigurationException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document1 = builder.newDocument();
+        Document document = builder.newDocument();
 
-        Element root = document1.createElement("root");
-        document1.appendChild(root);
+        Element root = document.createElement("root");
+        document.appendChild(root);
 
-        Comment comment1 = document1.createComment("this is a comment");
-        document1.insertBefore(comment1, root);
+        Comment comment1 = document.createComment("this is a comment");
+        document.insertBefore(comment1, root);
 
-        Element abc = document1.createElement("abc");
+        Element abc = document.createElement("abc");
         root.appendChild(abc);
 
         abc.setAttribute("ff", "123");
 
-        Text text = document1.createTextNode("this is a test.");
+        Text text = document.createTextNode("this is a test.");
 //        abc.appendChild(text);
         
         System.out.println(abc.getLastChild());
         abc.insertBefore(text, abc.getLastChild());
         
-        Comment comment2 = document1.createComment("this is a comment2");
+        Comment comment2 = document.createComment("this is a comment2");
         root.appendChild(comment2);
 
-        DOMSource source = new DOMSource(document1);
+        DOMSource source = new DOMSource(document);
 
 //        StringWriter stringWriter = new StringWriter();
 //        StreamResult streamResult = new StreamResult(stringWriter);
