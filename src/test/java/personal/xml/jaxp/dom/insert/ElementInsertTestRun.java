@@ -26,13 +26,15 @@ public class ElementInsertTestRun {
 
 
 
-        NodeList nodes = document.getElementsByTagName("c");
+        NodeList nodes = document.getElementsByTagName("b");
 
         Text a = document.createTextNode("value");
         Element p = document.createElement("newNode");
         p.appendChild(a);
 
-        nodes.item(0).appendChild(p);
+//        nodes.item(0).appendChild(p);
+        
+        nodes.item(0).insertBefore(p, nodes.item(0).getFirstChild());
 
 
 
