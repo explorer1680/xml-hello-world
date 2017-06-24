@@ -1,2 +1,5 @@
 Difference between SAXParser and XMLReader:
 https://stackoverflow.com/questions/13878998/difference-between-saxparser-and-xmlreader
+
+The most important thing in SAXParser and XMReaser is the events, the Handler is just deal with the events.
+The most important thing in SAXSource is also the events, not the handler.
