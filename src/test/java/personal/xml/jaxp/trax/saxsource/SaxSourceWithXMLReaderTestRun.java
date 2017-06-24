@@ -15,21 +15,30 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 
-public class SaxSourceTestRun {
+public class SaxSourceWithXMLReaderTestRun {
 	public static void main(String[] args)
 			throws SAXException, IOException, TransformerException, ParserConfigurationException {
 
-		//method 1 to get XMLReader:
+		// method 1 to get XMLReader:
 		// String parserClass = "org.apache.crimson.parser.XMLReaderImpl";
 		// XMLReader reader = XMLReaderFactory.createXMLReader(parserClass);
 
-		//method 2 to get XMLReader: (it not works)
+		// method 2 to get XMLReader: (it not works)
 		// SAXParserFactory parserFactory = SAXParserFactory.newInstance();
 		// SAXParser parser = parserFactory.newSAXParser();
+		// System.out.println(parser.getClass());
 		// XMLReader reader = parser.getXMLReader();
 
-		//method 3 to get XMLReader:
+		// method 3 to get XMLReader:
+		// com.sun.org.apache.xerces.internal.parsers.SAXParser
 		XMLReader reader = XMLReaderFactory.createXMLReader();
+
+		// reader.setContentHandler(new VoteHandler());
+
+		// reader.parse(new InputSource(new
+		// ClassPathResource("personal/xml/jaxp/trax/saxsource/vote.xml").getInputStream()));
+
+		System.out.println(reader.getClass());
 
 		SAXSource source = new SAXSource(reader,
 				new InputSource(new ClassPathResource("personal/xml/jaxp/trax/saxsource/vote.xml").getInputStream()));
@@ -42,6 +51,7 @@ public class SaxSourceTestRun {
 
 		TransformerFactory factory = TransformerFactory.newInstance();
 		Transformer transformer = factory.newTransformer(xsl);
+		// Transformer transformer = factory.newTransformer();
 
 		transformer.transform(source, new StreamResult(System.out));
 
