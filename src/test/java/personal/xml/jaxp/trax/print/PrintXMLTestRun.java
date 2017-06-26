@@ -39,7 +39,7 @@ public class PrintXMLTestRun {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
 
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+//        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 
         transformer.transform(source, streamResult);
 
