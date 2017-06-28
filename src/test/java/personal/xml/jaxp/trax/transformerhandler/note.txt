@@ -1,0 +1,10 @@
+Note:
+
+In this example, the transform is not done by: transformer.transform
+it is done by:
+reader.parse
+    reader.setContentHandler
+        handler.setResult
+        handler is created by: saxFactory.newTransformerHandler(xslFile)
+            saxFactory is: (SAXTransformerFactory) factory
+
