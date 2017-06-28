@@ -1,0 +1,9 @@
+Note:
+
+it seems when you want to chain the transformation, the transformer(source, result) will not works, because after first transformation,
+it is not easy to converty result to source for the next step.
+
+this class using reader and handler.
+
+Here is another way:
+http://www.inf.fu-berlin.de/lehre/SS03/19560-P/Docs/JWSDP/tutorial/doc/JAXPXSLT9.html
