@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-style sheet href="votes.xsl" type="text/xsl" ?>
+<votes totalVotes="5">
+    <voter personid="Emp1" status="primary">
+        <vote>Dregraal</vote>
+        <comments>
+            I would like to request that the date of voting be changed.
+            Any klybrtan youth would realize that it falls on the 334th
+            of Meeps, the Holiest of days for Squreenks. It is totally
+            unacceptable for us to vote then, since we have to spend the
+            entire day in the positronic chamber of worship.
+        </comments>
+    </voter>
+    <voter personid="Emp2" status="symbiont">
+        <vote>Sparkle</vote>
+        <comments>
+            Sfgrtng dwesvers melpy ypinee!
+        </comments>
+    </voter>
+    <voter personid="Emp3" status="aaa">
+        <vote>Sparkle</vote>
+        <comments>
+            aaa....
+        </comments>
+    </voter>
+    <voter personid="Emp4" status="bbb">
+        <vote>Sparkle</vote>
+        <comments>
+            bbb...
+        </comments>
+    </voter>
+    <voter personid="Emp5" status="ccc">
+        <vote>Sparkle</vote>
+        <comments>
+            ccc...
+        </comments>
+    </voter>
+</votes>
