@@ -7,5 +7,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Foo {
-    private String FooProp;
+    private String fooProp;
 }
