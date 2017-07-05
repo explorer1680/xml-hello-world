@@ -1,2 +1,16 @@
 http://blog.bdoughan.com/2012/12/jaxbs-xmlanyelementlaxtrue-explained.html
 
+Note 1:
+if you comment out "lax=true" from Root, like:
+    @XmlAnyElement//(lax = true)
+
+the Any Element are dom.ElementNSImpl.
+
+in this case, the output is save as before.
+
+
+Note 2:
+for Bar class, even you don't put ObjectFactory inside of newInstance(), like:
+        JAXBContext context = JAXBContext.newInstance(Root.class, Foo.class);//, ObjectFactory.class);
+the type of Bar is also:
+class javax.xml.bind.JAXBElement
