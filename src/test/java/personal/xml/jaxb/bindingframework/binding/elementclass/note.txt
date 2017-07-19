@@ -1,3 +1,5 @@
+this test case from elementclass.xsd, it has <jxb:globalBindings generateElementClass="true"/>
+
 Note 1: compared with "compared" package,
 
 one more class is added:
