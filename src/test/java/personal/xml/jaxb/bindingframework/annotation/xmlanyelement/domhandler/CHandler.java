@@ -1,13 +1,11 @@
 package personal.xml.jaxb.bindingframework.annotation.xmlanyelement.domhandler;
 
+import java.io.StringWriter;
+
 import javax.xml.bind.ValidationEventHandler;
 import javax.xml.bind.annotation.DomHandler;
-import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-import java.io.StringReader;
-import java.io.StringWriter;
 
 public class CHandler implements DomHandler<E, StreamResult>{
 

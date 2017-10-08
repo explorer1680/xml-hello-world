@@ -1,0 +1,6 @@
+JAXBContext context = JAXBContext.newInstance(Root.class);
+
+Marshaller marshaller = context.createMarshaller();
+marshaller.marshal(object, System.out);
+
+

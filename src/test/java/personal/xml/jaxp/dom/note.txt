@@ -1,5 +1,12 @@
 https://en.wikipedia.org/wiki/Java_API_for_XML_Processing
 
-DOM interface in org.w3c.dom package
+DOM interface:
+javax.xml.parsers.DocumentBuilderFactory
+javax.xml.parsers.DocumentBuilder
+org.w3c.dom.Document
+Document is in memory.
 
 for the DocumentBuilder, the method parse(String) and parse(InputStream) is different.
+
+What is DOM:
+https://www.w3.org/TR/DOM-Level-2-Core/introduction.html
