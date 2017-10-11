@@ -1,0 +1,7 @@
+https://www.w3schools.com/xml/xsl_languages.asp
+
+XSL consists of four parts:
+	•	XSLT - a language for transforming XML documents
+	•	XPath - a language for navigating in XML documents
+	•	XSL-FO - a language for formatting XML documents (discontinued in 2013)
+	•	XQuery - a language for querying XML documents
