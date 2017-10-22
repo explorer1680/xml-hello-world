@@ -13,10 +13,10 @@ import java.io.IOException;
 
 public class ReaderTestRun {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-//        SAXParserFactory factory = SAXParserFactory.newInstance();
-//        SAXParser parser = factory.newSAXParser();
-//        XMLReader reader = parser.getXMLReader();
-        XMLReader reader = XMLReaderFactory.createXMLReader();
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser parser = factory.newSAXParser();
+        XMLReader reader = parser.getXMLReader();
+//        XMLReader reader = XMLReaderFactory.createXMLReader();
 
         EmployeeHandler employeeHandler = new EmployeeHandler();
         reader.setContentHandler(employeeHandler);

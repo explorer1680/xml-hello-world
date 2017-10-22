@@ -2,3 +2,10 @@ StAX (Streaming API for XML)
 seems in javax.xml.stream package.
 
 https://docs.oracle.com/cd/E13222_01/wls/docs100/xml/stax.html
+
+example:
+https://www.journaldev.com/1191/java-stax-parser-example-read-xml-file
+
+StAX can read and write, but SAX can only read.
+
+https://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/1.6/tutorial/doc/SJSXP2.html
