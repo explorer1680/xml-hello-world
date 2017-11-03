@@ -6,6 +6,9 @@ Note 2:
 The interface "DomHandler" is generic.
 
 Note 3:
+If you have value="CHandler", this handler will deal with all element that belong to dom.ElementNSImpl
+that's why it called DomHandler.
+
 If you don't have value="CHandler", the default returned object will be:
 com.sun.org.apache.xerces.internal.dom.ElementNSImpl
 If you have defined value="CHandler", the returned object will comes from method:
@@ -16,3 +19,10 @@ It seems that if want to let the handler do the unmarshal and marshal,
 the object returned from "String getElement(StreamResult rt)" must have @XmlRootElement annotation.
 
 If you don't know to marshal it, it is ok to return any thing.
+
+Note 5:
+you can think of (lax=true) deal with defined whether or not the input element become dom.ElementNSImpl, JAXBElement or your definitation.
+and value="CHandler" deal with what happens if it is dom.ElementNSImpl.
+
+Note 6:
+how to output < instead of &lt;
