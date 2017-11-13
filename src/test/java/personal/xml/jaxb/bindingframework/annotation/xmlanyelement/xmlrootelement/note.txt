@@ -23,3 +23,9 @@ message.getBody() instanceof Customer
 return false.
 
 message.getBody() return class: com.sun.org.apache.xerces.internal.dom.ElementNSImpl
+
+Note 3:
+In this case, you using:
+    @XmlAnyElement(lax = true)
+    private Object body;
+If you provide 2 Customers in xml, the later will win.

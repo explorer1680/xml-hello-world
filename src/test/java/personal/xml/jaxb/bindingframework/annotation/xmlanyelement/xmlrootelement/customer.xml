@@ -6,4 +6,11 @@
             <city>Any Town</city>
         </address>
     </customer>
+    <customer>
+        <name>Sue Smith</name>
+        <address>
+            <street>456 B Street</street>
+            <city>Any Town</city>
+        </address>
+    </customer>
 </message>
