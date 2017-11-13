@@ -14,3 +14,10 @@ for Bar class, even you don't put ObjectFactory inside of newInstance(), like:
         JAXBContext context = JAXBContext.newInstance(Root.class, Foo.class);//, ObjectFactory.class);
 the type of Bar is also:
 class javax.xml.bind.JAXBElement
+
+Note 3:
+the
+@XmlAccessorType(XmlAccessType.FIELD)
+in Bar.java is needed.
+without it, the output is:
+<bar/>

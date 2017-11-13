@@ -1,5 +1,7 @@
 package personal.xml.jaxb.bindingframework.annotation.xmlanyelement.domhandler;
 
+import com.sun.xml.internal.bind.marshaller.DataWriter;
+import com.sun.xml.internal.bind.marshaller.DumbEscapeHandler;
 import org.springframework.core.io.ClassPathResource;
 
 import javax.xml.bind.JAXBContext;
@@ -7,6 +9,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class DomHandlerTestRun {
     public static void main(String[] args) throws JAXBException, IOException {
@@ -21,6 +24,10 @@ public class DomHandlerTestRun {
 
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
-        marshaller.marshal(root, System.out);
+//        marshaller.marshal(root, System.out);
+
+
+        DataWriter dataWriter = new DataWriter(new PrintWriter(System.out), "UTF-8", new MyEscapeHandler());
+        marshaller.marshal(root, dataWriter);
     }
 }

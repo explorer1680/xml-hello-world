@@ -18,11 +18,14 @@ Note 4:
 It seems that if want to let the handler do the unmarshal and marshal,
 the object returned from "String getElement(StreamResult rt)" must have @XmlRootElement annotation.
 
-If you don't know to marshal it, it is ok to return any thing.
+If you don't need to marshal it, it is ok to return any thing.
 
 Note 5:
-you can think of (lax=true) deal with defined whether or not the input element become dom.ElementNSImpl, JAXBElement or your definitation.
-and value="CHandler" deal with what happens if it is dom.ElementNSImpl.
+you can think of (lax=true) try to find out the correct type if it is JAXBElement or your definition, the other type is dom.ElementNSImpl.
+and value="CHandler" deal with dom.ElementNSImpl.
 
 Note 6:
-how to output < instead of &lt;
+how to output '<' instead of &lt;
+the reason why you get '&lt;' is because that in the unmarshal step, the dom.ElementNSImpl object has been converted by DomHander.
+Here, is the E.class, and the xml content of the dom.ElementNSImpl convert to String, and, when output string in marshell method,
+it by default using '&lt;' for '<'. Using CharacterEscapeHandler to change this behavior.
