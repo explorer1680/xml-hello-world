@@ -1,0 +1,8 @@
+Please note, if you remove
+writer.writeEndElement();
+it is ok, but if you remove
+writer.writeEndDocument();
+the output xml is not finished.
+
+how to make the xml has indent?
+you can use

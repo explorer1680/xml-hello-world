@@ -9,7 +9,8 @@ In addition to the parsing interfaces, the API provides an XSLT interface to pro
 StAX was designed as a median between the DOM and SAX interface.
 In its metaphor, the programmatic entry point is a cursor that represents a point within the document.
 The application moves the cursor forward - 'pulling' the information from the parser as it needs.
-This is different from an event based API - such as SAX - which 'pushes' data to the application - requiring the application to maintain state between events as necessary to keep track of location within the document.
+This is different from an event based API - such as SAX - which 'pushes' data to the application
+- requiring the application to maintain state between events as necessary to keep track of location within the document.
 
 The XML Stylesheet Language for Transformations, or XSLT, allows for conversion of an XML document into other forms of data.
 JAXP provides interfaces in package javax.xml.transform allowing applications to invoke an XSLT transformation.
