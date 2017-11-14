@@ -11,3 +11,11 @@ jaxb.properties file is for Moxy.
 
 Note 4:
 how List<PhoneNumber> mapping to xml.
+
+Note 5:
+compare the NormalUnmarshallerTestRun and BinderTestRun, you can see the binder can keep the whole xml file, even if you only map part of it,
+while the normal unmarshaller only keep the mapping part.
+
+Note 6:
+the jaxb is the framework let you operate xml by manipulate corresponding java object.
+The jaxp is the framework let you operate xml by it own method.

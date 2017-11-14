@@ -1,10 +1,14 @@
 this test case from elementclass.xsd, it has <jxb:globalBindings generateElementClass="true"/>
+the default way is element instance.
 
 Note 1: compared with "compared" package,
 
 one more class is added:
 
 public class Complex extends JAXBElement<AComplexType>
+
+please note, it seems not too much difference, the element instance are returning
+JAXBElement<AComplexType>
 
 Note 2:
 the class for this test case are also coming from xjc command,

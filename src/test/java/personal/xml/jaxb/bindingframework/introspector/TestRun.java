@@ -18,6 +18,9 @@ public class TestRun {
 
         System.out.println("object from Cup is a JAXB element? " + introspector.isElement(cup));
 
+        System.out.println(introspector.getElementName(cup));
+        System.out.println(JAXBIntrospector.getValue(cup));
+
         System.out.println(introspector.getElementName(table));
         System.out.println(JAXBIntrospector.getValue(table));
     }
