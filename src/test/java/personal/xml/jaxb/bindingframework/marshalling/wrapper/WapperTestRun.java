@@ -9,19 +9,20 @@ import java.io.StringWriter;
 
 public class WapperTestRun {
     public static void main(String[] args) throws JAXBException {
-        JAXBContext context = JAXBContext.newInstance(ProductElement.class);
+        JAXBContext context = JAXBContext.newInstance(ProductElement.class, Product.class);
 
         Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
         StringWriter stringWriter = new StringWriter();
 
-        Product product = new Product("name","description");
+        Product product = new Product("name", "description");
 
-        QName qName = new QName("", "product");
+        QName qName = new QName("myNameSpace", "product2");
 
         JAXBElement element = new JAXBElement(qName, ProductElement.class, product);
 
-        marshaller.marshal(element,stringWriter);
+        marshaller.marshal(element, stringWriter);
 
         System.out.println(stringWriter);
     }
