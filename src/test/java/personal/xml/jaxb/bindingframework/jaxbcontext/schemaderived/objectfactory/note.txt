@@ -10,3 +10,5 @@ in ObjectFactoryTestRun, you create a FlightType object, if you pass this object
 it will there exception, complain that there is no @XmlRootElement annotation on it.
 You have to using ObjectFactory() to create a new object, that marshal it.
 
+Note 4:
+it seems that you can remove @XmlType

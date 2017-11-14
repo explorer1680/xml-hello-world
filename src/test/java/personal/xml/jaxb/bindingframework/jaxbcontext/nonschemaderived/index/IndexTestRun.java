@@ -15,10 +15,12 @@ public class IndexTestRun {
 		
 		Flight ac032 = new Flight ("AC032", "AirBus 340");
 		
-		StringWriter sw = new StringWriter();
-		
-		marshaller.marshal(ac032, sw);
-		
-		System.out.println(sw.toString());
+//		StringWriter sw = new StringWriter();
+//
+//		marshaller.marshal(ac032, sw);
+//
+//		System.out.println(sw.toString());
+
+		marshaller.marshal(ac032, System.out);
 	}
 }
