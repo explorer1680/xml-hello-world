@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-style sheet href="votes.xsl" type="text/xsl" ?>
+<?xml-stylesheet type="text/xsl" href="votes.xsl"?>
 <votes totalVotes="5">
     <voter personid="Emp1" status="primary">
         <vote>Dregraal</vote>
