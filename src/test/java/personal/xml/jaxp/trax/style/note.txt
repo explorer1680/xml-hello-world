@@ -1,7 +1,0 @@
-How to using:
-Source style = transFactory.getAssociatedStylesheet(source, null, null, null);
-to specify xsl file?
-where to put votes.xsl file?
-
-Listing 10.6a Determining the Style Sheet in:
-http://www.informit.com/articles/article.aspx?p=31449&seqNum=2

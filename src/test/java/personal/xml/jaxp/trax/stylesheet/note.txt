@@ -1,0 +1,9 @@
+this example specify the Style Sheet within an XML document
+
+Please note, the "ClassPathResource" or "FileSystemResource" is not the problem, the "getInputStream" or "getFile" is.
+
+Listing 10.6a Determining the Style Sheet in:
+http://www.informit.com/articles/article.aspx?p=31449&seqNum=2
+
+it should be:
+<?xml-stylesheet
