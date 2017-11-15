@@ -1,4 +1,4 @@
-package personal.xml.jaxp.trax.basic;
+package personal.xml.jaxp.trax.simple.basic;
 
 import org.springframework.core.io.ClassPathResource;
 
@@ -11,11 +11,11 @@ public class BasicTestRun {
     public static void main(String[] args) throws TransformerException, IOException {
 
 
-        StreamSource source = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/basic/vote.xml").getInputStream());
+        StreamSource source = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/simple/basic/vote.xml").getInputStream());
 
         TransformerFactory factory = TransformerFactory.newInstance();
 
-        StreamSource xsl = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/basic/votes.xsl").getInputStream());
+        StreamSource xsl = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/simple/basic/votes.xsl").getInputStream());
 
         Transformer transformer = factory.newTransformer(xsl);
 
