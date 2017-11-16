@@ -1,4 +1,4 @@
-package personal.xml.jaxp.trax.saxresult;
+package personal.xml.jaxp.trax.withsax.saxresult;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

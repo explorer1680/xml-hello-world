@@ -1,0 +1,1 @@
+In this test case, the result is SAXResult, it is used to send result to DefaultHandler.
