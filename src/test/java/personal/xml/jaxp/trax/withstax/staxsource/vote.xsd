@@ -1,0 +1,29 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            this document is created for validate vote.xml in SaxSourece test case.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="votes" type="votesType"/>
+
+    <xsd:complexType name="votesType">
+        <xsd:sequence>
+            <xsd:element name="voter" minOccurs="0" maxOccurs="unbounded" type="voter"/>
+        </xsd:sequence>
+        <xsd:attribute name="totalVotes" type="xsd:int"/>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="voter">
+        <xsd:sequence>
+            <xsd:element name="vote" type="xsd:string"/>
+            <xsd:element name="comments" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="personid" type="xsd:string"/>
+        <xsd:attribute name="status" type="xsd:string"/>
+    </xsd:complexType>
+
+
+</xsd:schema>
