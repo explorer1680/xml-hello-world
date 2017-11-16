@@ -15,8 +15,10 @@ public class ReaderTestRun {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
-        XMLReader reader = parser.getXMLReader();
-//        XMLReader reader = XMLReaderFactory.createXMLReader();
+//        XMLReader reader = parser.getXMLReader();
+        XMLReader reader = XMLReaderFactory.createXMLReader();
+
+        System.out.println(reader.getClass());
 
         EmployeeHandler employeeHandler = new EmployeeHandler();
         reader.setContentHandler(employeeHandler);

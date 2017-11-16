@@ -1,5 +1,16 @@
 Difference between SAXParser and XMLReader:
 https://stackoverflow.com/questions/13878998/difference-between-saxparser-and-xmlreader
 
-The most important thing in SAXParser and XMReaser is the events, the Handler is just deal with the events.
+The most important thing in SAXParser and XMLReader is the events, the Handler is just deal with the events.
 The most important thing in SAXSource is also the events, not the handler.
+
+the reader from:
+XMLReader reader = XMLReaderFactory.createXMLReader();
+is:
+class com.sun.org.apache.xerces.internal.parsers.SAXParser
+
+the reader from:
+parser.getXMLReader()
+is:
+class com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+they have same result in sax test, but, they have different result for trax.saxsource.

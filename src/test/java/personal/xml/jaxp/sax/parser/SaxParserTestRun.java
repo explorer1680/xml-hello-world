@@ -13,6 +13,9 @@ public class SaxParserTestRun {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
         StudentHandler handler = new StudentHandler();
+
+        System.out.println(parser.getClass());
+        System.out.println(parser.getXMLReader().getClass());
         parser.parse(new ClassPathResource("personal/xml/jaxp/sax/parser/student.xml").getInputStream(), handler);
     }
 }
