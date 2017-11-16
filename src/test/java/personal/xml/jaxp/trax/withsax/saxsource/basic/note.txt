@@ -1,0 +1,39 @@
+What is the purpose for the saxsource?
+In the test case basic, we can transformer the file, why we need this test?
+
+
+This test case show that SAX also can be the source of transformer.
+Normally, we think of SAX as a tool to parse XML, just like StAX, but they are different.
+SAX is a kind of source of XML, it send out event, you define handler, you get the result you want,
+if you don't define handler, it is still a XML source, the event come out by themselves, not by you.
+StAX is different, it is not a source of XML, it is just a tool to parse xml, if you don't define cursor, it will not do anything.
+
+Why we need XMLReader in SaxSource?
+We can get SaxSource from inputStream directly, like in SaxSourceBasicTestRun.
+Maybe, we can do some other job when transform the xml.
+but, setup handler and get handler run is coming from separate code.
+Here is the answer.
+https://docs.oracle.com/javase/7/docs/api/javax/xml/transform/sax/SAXSource.html#SAXSource()
+Note:
+The Transformer or SAXTransformerFactory will set itself to be the reader's ContentHandler, and then will call reader.parse(inputSource).
+
+Does JAXB uses SAX or DOM internally?
+https://stackoverflow.com/questions/9923326/does-jaxb-uses-sax-or-dom-internally
+
+
+Note: 
+in SaxSourceWithXMLReaderTestRun, reader comes from
+XMLReader reader = XMLReaderFactory.createXMLReader();
+everything works fine.
+
+In SaxSourceWithParserReaderTestRun, reader comes from
+XMLReader reader = parser.getXMLReader();
+when transform without xsl:
+Transformer transformer = factory.newTransformer();
+it works fine.
+when transform with xsl:
+Transformer transformer = factory.newTransformer(xsl);
+it don't work.
+
+It means the XMLReader do involve in the transform.
+

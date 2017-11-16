@@ -1,0 +1,1 @@
+one of the benefit to use sax in transformer is to validate xml.
