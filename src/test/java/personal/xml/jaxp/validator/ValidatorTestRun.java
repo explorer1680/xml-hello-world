@@ -1,7 +1,6 @@
 package personal.xml.jaxp.validator;
 
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
