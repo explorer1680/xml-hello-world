@@ -1,12 +1,12 @@
 What is the purpose for the saxsource?
-In the test case basic, we can transformer the file, why we need this test?
+In the test case simple.basic, we can transformer the file, why we need this test?
 
 
 This test case show that SAX also can be the source of transformer.
-Normally, we think of SAX as a tool to parse XML, just like StAX, but they are different.
-SAX is a kind of source of XML, it send out event, you define handler, you get the result you want,
+Normally, we think of SAX as a tool to parse XML, but actully, SAX is a kind of source of XML,
+it send out event, you define handler, you get the result you want,
 if you don't define handler, it is still a XML source, the event come out by themselves, not by you.
-StAX is different, it is not a source of XML, it is just a tool to parse xml, if you don't define cursor, it will not do anything.
+StAX is also a source of XML.
 
 Why we need XMLReader in SaxSource?
 We can get SaxSource from inputStream directly, like in SaxSourceBasicTestRun.
