@@ -1,4 +1,4 @@
-package personal.xml.jaxp.stax.streamwriter;
+package personal.xml.jaxp.stax.write.streamwriter;
 
 import com.sun.xml.internal.txw2.output.IndentingXMLStreamWriter;
 import org.springframework.core.io.FileSystemResource;

@@ -1,4 +1,4 @@
-package personal.xml.jaxp.stax.read;
+package personal.xml.jaxp.stax.read.eventreader;
 
 public class Employee {
 	private int id;

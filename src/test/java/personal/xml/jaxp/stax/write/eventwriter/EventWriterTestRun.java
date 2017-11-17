@@ -1,6 +1,5 @@
-package personal.xml.jaxp.stax.eventwriter;
+package personal.xml.jaxp.stax.write.eventwriter;
 
-import com.sun.xml.internal.txw2.output.IndentingXMLStreamWriter;
 import org.springframework.core.io.FileSystemResource;
 
 import javax.xml.stream.*;

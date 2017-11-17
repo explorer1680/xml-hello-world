@@ -1,4 +1,4 @@
-package personal.xml.jaxp.stax.read;
+package personal.xml.jaxp.stax.read.eventreader;
 
 import java.io.InputStream;
 import java.util.ArrayList;
