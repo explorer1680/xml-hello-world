@@ -26,3 +26,6 @@ hs_err_pid*
 xml.iml
 target/*
 
+/target/
+.project
+.classpath
