@@ -22,3 +22,84 @@ are different
 <xsl:template match="/catalog/"> == <xsl:template match="/catalog/node()">
 it seems that you can't using <xsl:template match="/catalog/"> in this example.
 
+Test 1:
+remove following:
+    <xsl:template match="cd">
+        <p>
+            <xsl:apply-templates select="title"/>
+            <xsl:apply-templates select="artist"/>
+        </p>
+    </xsl:template>
+
+    <xsl:template match="title">
+        Title: <span style="color:#ff0000">
+        <xsl:value-of select="."/></span>
+        <br />
+    </xsl:template>
+
+    <xsl:template match="artist">
+        Artist: <span style="color:#00ff00">
+        <xsl:value-of select="."/></span>
+        <br />
+    </xsl:template>
+
+it seems without corresponding template, it just print the content of the element.
+
+Test 2:
+change to: <xsl:template match="/catalog">
+same as before.
+
+Test 3:
+change to: <xsl:template match="/catalog/">
+error.
+
+Test 4:
+change to: <xsl:template match="/catalog/*">
+in this case, the <html> repeat 2 times.
+you can remove:
+    <xsl:template match="cd">
+        <p>
+            <xsl:apply-templates select="title"/>
+            <xsl:apply-templates select="artist"/>
+        </p>
+    </xsl:template>
+in this test case, because it doesn't selected.
+
+Test 5:
+change to: <xsl:template match="/catalog/node()">
+You can see, for every node between elements, it print something.
+following have 5 node under <catalog>
+<catalog>
+    <cd>...</cd>
+    <cd>...</cd>
+</catalog>
+
+change to:
+<catalog><cd>...</cd><cd>...</cd></catalog>
+only 2 node.
+
+Test 5:
+in above test case, change to:
+<xsl:template match="catalog/cd">
+
+in this case, you can remove following part:
+    <xsl:template match="/catalog/node()">
+        <html>
+            <body>
+                <h2>My CD Collection</h2>
+                <xsl:apply-templates/>
+            </body>
+        </html>
+    </xsl:template>
+you can see the difference, it shows in this case, both
+<xsl:template match="/catalog/node()">
+and
+<xsl:template match="catalog/cd">
+take effect.
+
+you can switch the order of these 2 element, to see the meaning of:
+"If several templates have the same priority, the last in the style sheet is chosen."
+
+actually, the <xsl:apply-templates/> is not necessary, you can use <xsl:template match=""> to trigger the process.
+using <xsl:apply-templates/> is a way to specify the entry point, and you can have something around this entry point.
+Without it, you need to put these "something" inside of the root template.
