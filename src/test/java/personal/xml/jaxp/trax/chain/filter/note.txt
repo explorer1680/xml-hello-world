@@ -1,0 +1,14 @@
+The logic in handler looks natural.
+
+reader.parse()
+reader.setContentHandler(handler1);
+handler1.setResult(new SAXResult(handler2));
+handler2.setResult(new StreamResult(System.out));
+
+The logic in filter looks not natural.
+filter2.parse()
+    filter2.setContentHandler(handler);
+    handler.setResult(new StreamResult(System.out));
+
+filter2.setParent(filter1);
+filter1.setParent(reader);
