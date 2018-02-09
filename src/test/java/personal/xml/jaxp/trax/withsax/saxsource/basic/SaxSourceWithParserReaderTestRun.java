@@ -31,7 +31,7 @@ public class SaxSourceWithParserReaderTestRun {
 //		 reader.setContentHandler(new VoteHandler());
 //
 //		reader.parse(
-//				new InputSource(new ClassPathResource("personal/xml/jaxp/trax/saxsource/vote.xml").getInputStream()));
+//				new InputSource(new ClassPathResource("personal/xml/jaxp/trax/withsax/saxsource/basic/vote.xml").getInputStream()));
 
 		System.out.println("--" + reader.getClass());
 
