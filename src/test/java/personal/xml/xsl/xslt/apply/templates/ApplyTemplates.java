@@ -1,4 +1,4 @@
-package personal.xml.xsl.xpath.apply.templates;
+package personal.xml.xsl.xslt.apply.templates;
 
 import org.springframework.core.io.ClassPathResource;
 
@@ -12,12 +12,11 @@ import java.io.IOException;
 public class ApplyTemplates {
     public static void main(String[] args) throws TransformerException, IOException {
 
-
-        StreamSource source = new StreamSource(new ClassPathResource("personal/xml/xsl/xpath/apply/templates/cd.xml").getInputStream());
+        StreamSource source = new StreamSource(new ClassPathResource("personal/xml/xsl/xslt/apply/templates/cd.xml").getInputStream());
 
         TransformerFactory factory = TransformerFactory.newInstance();
 
-        StreamSource xsl = new StreamSource(new ClassPathResource("personal/xml/xsl/xpath/apply/templates/cd.xsl").getInputStream());
+        StreamSource xsl = new StreamSource(new ClassPathResource("personal/xml/xsl/xslt/apply/templates/cd.xsl").getInputStream());
 
         Transformer transformer = factory.newTransformer(xsl);
 
