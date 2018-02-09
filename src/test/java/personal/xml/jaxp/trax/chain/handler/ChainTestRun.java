@@ -1,4 +1,4 @@
-package personal.xml.jaxp.trax.withsax.chain;
+package personal.xml.jaxp.trax.chain.handler;
 
 import org.springframework.core.io.ClassPathResource;
 import org.xml.sax.InputSource;
@@ -18,8 +18,8 @@ import java.io.IOException;
 public class ChainTestRun {
     public static void main(String[] args) throws IOException, TransformerConfigurationException, SAXException {
 
-        StreamSource xsl1 = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/withsax/chain/votes.xsl").getInputStream());
-        StreamSource xsl2 = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/withsax/chain/votesOnly.xsl").getInputStream());
+        StreamSource xsl1 = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/chain/handler/votes.xsl").getInputStream());
+        StreamSource xsl2 = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/chain/handler/votesOnly.xsl").getInputStream());
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         SAXTransformerFactory factory = (SAXTransformerFactory)transformerFactory;
@@ -34,6 +34,6 @@ public class ChainTestRun {
 
         reader.setContentHandler(handler1);
 
-        reader.parse(new InputSource(new ClassPathResource("personal/xml/jaxp/trax/withsax/chain/vote.xml").getInputStream()));
+        reader.parse(new InputSource(new ClassPathResource("personal/xml/jaxp/trax/chain/handler/vote.xml").getInputStream()));
     }
 }
