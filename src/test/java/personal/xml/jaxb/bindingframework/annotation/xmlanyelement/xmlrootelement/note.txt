@@ -29,3 +29,15 @@ In this case, you using:
     @XmlAnyElement(lax = true)
     private Object body;
 If you provide 2 Customers in xml, the later will win.
+
+where is lax coming from:
+https://www.w3.org/TR/xmlschema11-1/
+strict, skip, lax.
+
+what is lax=true means:
+https://docs.oracle.com/javaee/5/api/javax/xml/bind/annotation/XmlAnyElement.html#lax()
+
+the "lax" in w3c means:
+If the item has a uniquely determined declaration available, it must be ·valid· with respect to that declaration,
+that is, ·validate· if you can, don't worry if you can't.
+in Jaxb, it means using Class if you can, using Dom if you can't.

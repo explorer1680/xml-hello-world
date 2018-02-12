@@ -6,4 +6,4 @@ Listing 10.5 Specifying the Style Sheet within an XML document
 
 
 There are so many test case in this package, the basic idea is, you can use transformer with a lot of source.
-Because in real world, the xml may not comming from a file in file system.
+Because in real world, the xml may not coming from a file in file system.

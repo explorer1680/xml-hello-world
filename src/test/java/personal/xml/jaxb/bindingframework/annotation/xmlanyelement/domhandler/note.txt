@@ -1,5 +1,8 @@
 Note 1:
-If A.class in not in JAXBContext.newInstance(), the element "a" will be a dom.ElementNSImpl.
+If A.class in not in JAXBContext.newInstance(), the element "a" will be:
+personal.xml.jaxb.bindingframework.annotation.xmlanyelement.domhandler.E
+because, it is dom.ElementNSImpl then pass to CHandler, then getElement method return domhandler.E
+
 Even B.class and ObjectFactory.class is not in JAXBContext.newInstance(), the element "b" is always a JAXBElement.
 
 Note 2:
