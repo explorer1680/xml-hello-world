@@ -7,8 +7,17 @@ In the FlightType, there is no @XmlRootElement annotation.
 
 Note 3:
 in ObjectFactoryTestRun, you create a FlightType object, if you pass this object to marshaller directly,
-it will there exception, complain that there is no @XmlRootElement annotation on it.
+it will throw exception, complain that there is no @XmlRootElement annotation on it.
 You have to using ObjectFactory() to create a new object, that marshal it.
 
 Note 4:
 it seems that you can remove @XmlType
+
+Note 5:
+ObjectFactory is responsible to create JAXBElement.
+It using @XmlElementDecl to declare xml element. These xml element is defined in flight.xsd.
+I think @XmlType is used to link java class with xsd file. So, you can remove it in this test case,
+or specify the name as
+name = "FlightType2"
+it is ok in this test case.
+But, you may have problem when you want to validate it.

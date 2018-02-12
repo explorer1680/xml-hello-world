@@ -24,5 +24,9 @@ public class ObjectFactoryTestRun {
         marshaller.marshal(flight, sw);
 
         System.out.println(sw.toString());
+
+        String str = "This is just a comment";
+        JAXBElement<String> comment = new ObjectFactory().createComment(str);
+        marshaller.marshal(comment, System.out);
     }
 }
