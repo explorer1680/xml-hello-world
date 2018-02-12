@@ -14,7 +14,7 @@ Note 4:
 it seems that you can remove @XmlType
 
 Note 5:
-ObjectFactory is responsible to create JAXBElement.
+ObjectFactory is responsible to create JAXBElement and FlightType(but you can create it directly).
 It using @XmlElementDecl to declare xml element. These xml element is defined in flight.xsd.
 I think @XmlType is used to link java class with xsd file. So, you can remove it in this test case,
 or specify the name as

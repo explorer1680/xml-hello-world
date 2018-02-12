@@ -1,9 +1,13 @@
 Note 1:
 The root element in po.xml has to be named "purchaseOrder", other names like "purchaseOrder1" not working.
+if you want it work, you have to change followings:
+1. @XmlType(name = "PurchaseOrderType" ...) in PurchaseOrderType (not needed)
+2. private final static QName _PurchaseOrder_QNAME = new QName("", "purchaseOrder");  in ObjectFactory, (not needed)
+3. @XmlElementDecl(namespace = "", name = "purchaseOrder1")  in ObjectFactory, (yes, you need to change here)
 
 
 Note 2:
-There are many element defined in po.xml, and there are corresponding java element representation in objectFactory class,
+There are many element defined in po.xml, and there are corresponding java element representation in ObjectFactory class,
 any of them can be passed to unmarshaller, and return a corresponding java object.
 
 Note 3:

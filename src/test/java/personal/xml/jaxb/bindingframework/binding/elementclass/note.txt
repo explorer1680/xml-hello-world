@@ -19,7 +19,7 @@ compared with the class annotated with @XmlRootElement, the Complex class's stru
 
 
 Note 4:
-Compared with the example in jaxbcontext.schemaderived.objectfactory, the new created "Complex" object is ready to passed to marshaller.
+Compared with the example in _1create.jaxb.context.schemaderived.objectfactory, the new created "Complex" object is ready to passed to marshaller.
 
 Note 5:
 Note how to create a new Complex object.

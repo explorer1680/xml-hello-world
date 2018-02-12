@@ -13,8 +13,8 @@ public class TestRun {
 
         Unmarshaller unmarshaller = context.createUnmarshaller();
 
-        Object object = unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/binding/elementinstance/comment.xml").getInputStream());
-//        Object object = unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/binding/elementinstance/po.xml").getInputStream());
+//        Object object = unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/binding/elementinstance/comment.xml").getInputStream());
+        Object object = unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/binding/elementinstance/po.xml").getInputStream());
 
         System.out.println(object);
     }

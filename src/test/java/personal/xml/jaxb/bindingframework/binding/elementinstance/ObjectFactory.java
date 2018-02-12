@@ -77,7 +77,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link PurchaseOrderType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "purchaseOrder")
+    @XmlElementDecl(namespace = "", name = "purchaseOrder1")
     public JAXBElement<PurchaseOrderType> createPurchaseOrder(PurchaseOrderType value) {
         return new JAXBElement<PurchaseOrderType>(_PurchaseOrder_QNAME, PurchaseOrderType.class, null, value);
     }
