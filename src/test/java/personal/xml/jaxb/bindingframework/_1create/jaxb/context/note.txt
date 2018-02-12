@@ -1,0 +1,8 @@
+to create a Jaxb Context, using JAXBContext.newInstance.
+there are 2 type param you can pass to newInstance().
+1. is Class with @XmlRootElement annotation.
+2. a string. specify the package name.
+    in this case, the package should be:
+    a. this package has a ObjectFactory created by xjc command against xsd file.
+    or
+    b. this package include a jaxb.index file, list the @XmlRootElement annotated class.
