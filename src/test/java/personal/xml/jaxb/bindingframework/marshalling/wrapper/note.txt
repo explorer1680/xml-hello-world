@@ -1,3 +1,6 @@
 this example show how to create a test case that using JAXBElement as first parameter to marshal method.
 
 You can use ObjectFactory from xjc command.
+
+Note:
+localPort change the root element.

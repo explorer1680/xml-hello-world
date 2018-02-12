@@ -21,6 +21,7 @@ public class WapperTestRun {
         QName qName = new QName("myNameSpace", "product2");
 
         JAXBElement element = new JAXBElement(qName, ProductElement.class, product);
+//        ProductElement element = new ProductElement("name", "description");
 
         marshaller.marshal(element, stringWriter);
 
