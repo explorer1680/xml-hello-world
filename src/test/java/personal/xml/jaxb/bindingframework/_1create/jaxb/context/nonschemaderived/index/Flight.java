@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.jaxbcontext.nonschemaderived.usingclass;
+package personal.xml.jaxb.bindingframework._1create.jaxb.context.nonschemaderived.index;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -9,13 +9,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Flight {
 
 	private String flightNumber;
-	private AirPlane aircraftType;
+	private String aircraftType;
 
 	public Flight() {
 		super();
 	}
 
-	public Flight(String flightNumber, AirPlane aircraftType) {
+	public Flight(String flightNumber, String aircraftType) {
 		super();
 		this.flightNumber = flightNumber;
 		this.aircraftType = aircraftType;
@@ -29,11 +29,11 @@ public class Flight {
 		this.flightNumber = flightNumber;
 	}
 
-	public AirPlane getAircraftType() {
+	public String getAircraftType() {
 		return aircraftType;
 	}
 
-	public void setAircraftType(AirPlane aircraftType) {
+	public void setAircraftType(String aircraftType) {
 		this.aircraftType = aircraftType;
 	}
 }

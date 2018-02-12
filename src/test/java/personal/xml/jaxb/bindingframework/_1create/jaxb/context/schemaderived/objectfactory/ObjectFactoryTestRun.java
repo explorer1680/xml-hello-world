@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.jaxbcontext.schemaderived.objectfactory;
+package personal.xml.jaxb.bindingframework._1create.jaxb.context.schemaderived.objectfactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -8,7 +8,7 @@ import java.io.StringWriter;
 
 public class ObjectFactoryTestRun {
     public static void main(String[] args) throws JAXBException {
-        JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.jaxbcontext.schemaderived.objectfactory");
+        JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework._1create.jaxb.context.schemaderived.objectfactory");
 
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);

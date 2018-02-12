@@ -6,7 +6,7 @@
 //
 
 
-package personal.xml.jaxb.bindingframework.jaxbcontext.schemaderived.objectfactory;
+package personal.xml.jaxb.bindingframework._1create.jaxb.context.schemaderived.objectfactory;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

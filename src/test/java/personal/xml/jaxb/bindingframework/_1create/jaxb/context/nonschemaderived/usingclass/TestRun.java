@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.jaxbcontext.nonschemaderived.usingclass;
+package personal.xml.jaxb.bindingframework._1create.jaxb.context.nonschemaderived.usingclass;
 
 import java.io.StringWriter;
 
@@ -9,7 +9,7 @@ import javax.xml.bind.Marshaller;
 public class TestRun {
 	public static void main(String[] args) throws JAXBException{
 		JAXBContext context = JAXBContext.newInstance(Flight.class);
-//		JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.jaxbcontext.nonschemaderived.usingclass");
+//		JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework._1create.jaxb.context.nonschemaderived.usingclass");
 		
 		Marshaller marshaller = context.createMarshaller();
 		
