@@ -14,7 +14,7 @@ Model group that represents a binding declaration. Each new binding
 declaration added to the jaxb namespace that is not restricted to 
 globalBindings should be added as a child element to this model group.
     </xs:documentation></xs:annotation>
-    <!-- each new binding declaration, not restricted to
+    <!-- each new _2binding declaration, not restricted to
            globalBindings, should be added here -->
     <xs:choice>
       <xs:element ref = "jaxb:globalBindings"/>
@@ -212,7 +212,7 @@ The name attribute for [baseType] enables more precise control over the actual b
 
 <!-- Removed in JAXB 2.0. modelGroupBinding no longer exists.
     <xs:simpleType name = "bindingStyleType">
-    <xs:annotation><xs:documentation>Allows selection of a binding algorithm</xs:documentation></xs:annotation>
+    <xs:annotation><xs:documentation>Allows selection of a _2binding algorithm</xs:documentation></xs:annotation>
     <xs:restriction base = "xs:string">
       <xs:enumeration value = "elementBinding"/>
       <xs:enumeration value = "modelGroupBinding"/>
@@ -297,7 +297,7 @@ designated by schemaLocation attribute. The node
 attribute identifies the node in the remote schema
 to associate the binding declaration(s) with.
       </xs:documentation></xs:annotation>
-    <!-- a <bindings> element can contain arbitrary number of binding declarations or nested <bindings> elements -->
+    <!-- a <bindings> element can contain arbitrary number of _2binding declarations or nested <bindings> elements -->
     <xs:complexType>
       <xs:sequence>
         <xs:choice minOccurs = "0" maxOccurs = "unbounded">

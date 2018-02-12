@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
+ * and classes representing the _2binding of schema
  * type definitions, element declarations and model 
  * groups.  Factory methods for each of these are 
  * provided in this class.

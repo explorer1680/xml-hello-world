@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.binding.elementclass;
+package personal.xml.jaxb.bindingframework._2binding.elementclass;
 
 import org.springframework.core.io.ClassPathResource;
 
@@ -10,10 +10,10 @@ import java.io.IOException;
 
 public class ElementClassTestRun {
     public static void main(String[] args) throws JAXBException, IOException {
-        JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework.binding.elementclass");
+        JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework._2binding.elementclass");
         Unmarshaller unmarshaller = context.createUnmarshaller();
 
-        Complex complex = (Complex)unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/binding/elementclass/elementclass.xml").getInputStream());
+        Complex complex = (Complex)unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/_2binding/elementclass/elementclass.xml").getInputStream());
 
         System.out.println(complex);
 

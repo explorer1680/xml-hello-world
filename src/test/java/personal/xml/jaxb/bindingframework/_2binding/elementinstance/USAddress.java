@@ -6,7 +6,7 @@
 //
 
 
-package personal.xml.jaxb.bindingframework.binding.elementinstance;
+package personal.xml.jaxb.bindingframework._2binding.elementinstance;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;

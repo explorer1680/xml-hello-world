@@ -6,7 +6,7 @@
 //
 
 
-package personal.xml.jaxb.bindingframework.binding.elementclass;
+package personal.xml.jaxb.bindingframework._2binding.elementclass;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
