@@ -10,7 +10,8 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Root {
 
-    @XmlAnyElement(lax = true, value = CHandler.class)
+//    @XmlAnyElement(lax = true, value = StreamResultHandler.class)
+    @XmlAnyElement(lax = true, value = DOMResultHandler.class)
     private List<Object> any;
 
     public List<Object> getAny() {

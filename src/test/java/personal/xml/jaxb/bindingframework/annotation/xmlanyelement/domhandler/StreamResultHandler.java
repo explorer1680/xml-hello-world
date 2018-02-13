@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.DomHandler;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamResult;
 
-public class CHandler implements DomHandler<E, StreamResult>{
+public class StreamResultHandler implements DomHandler<E, StreamResult>{
 
     @Override
     public StreamResult createUnmarshaller(ValidationEventHandler errorHandler) {
