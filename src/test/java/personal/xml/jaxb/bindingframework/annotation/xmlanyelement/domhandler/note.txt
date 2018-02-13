@@ -29,6 +29,6 @@ and value="CHandler" deal with dom.ElementNSImpl.
 
 Note 6:
 how to output '<' instead of &lt;
-the reason why you get '&lt;' is because that in the unmarshal step, the dom.ElementNSImpl object has been converted by DomHander.
-Here, is the E.class, and the xml content of the dom.ElementNSImpl convert to String, and, when output string in marshell method,
+the reason why you get '&lt;' is because that in the unmarshal step, the dom.ElementNSImpl object has been converted by DomHandler.
+Here, is the E.class, and the xml content of the dom.ElementNSImpl convert to String, and, when output string in marshal method,
 it by default using '&lt;' for '<'. Using CharacterEscapeHandler to change this behavior.
