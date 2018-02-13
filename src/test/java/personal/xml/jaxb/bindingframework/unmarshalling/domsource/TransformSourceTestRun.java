@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.unmarshalling.transformsource;
+package personal.xml.jaxb.bindingframework.unmarshalling.domsource;
 
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -16,7 +16,7 @@ import java.io.IOException;
 public class TransformSourceTestRun {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, JAXBException {
-        ClassPathResource xmlInstance = new ClassPathResource("personal/xml/jaxb/bindingframework/unmarshalling/transformsource/employee.xml");
+        ClassPathResource xmlInstance = new ClassPathResource("personal/xml/jaxb/bindingframework/unmarshalling/domsource/employee.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();

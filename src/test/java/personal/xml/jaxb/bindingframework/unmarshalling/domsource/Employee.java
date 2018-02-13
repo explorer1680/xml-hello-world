@@ -1,4 +1,4 @@
-package personal.xml.jaxb.bindingframework.unmarshalling.transformsource;
+package personal.xml.jaxb.bindingframework.unmarshalling.domsource;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

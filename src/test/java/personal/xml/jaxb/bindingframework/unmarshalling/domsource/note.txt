@@ -1,4 +1,3 @@
 JAXB is the framework for xml and java.
 By this test case, the xml is coming from DOM.
 
-I think this example should be named as domsource.
