@@ -1,0 +1,9 @@
+to use xml element in marshaller and unmarshaller
+
+For @XmlRootElement class, you can create an element with class constructor and pass it to marshaller.
+you can cast the unmarshalled object to that class.
+
+For the element instance, you create an element with class constructor, then you have to pass it to ObjectFactory, then pass it to marshaller.
+and, you can't cast the unmarshalled object to that class, it has to be Object.
+
+For the class instance, the behavior similar to @XmlRootElement.
