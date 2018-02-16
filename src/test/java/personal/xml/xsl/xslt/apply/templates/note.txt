@@ -49,6 +49,29 @@ Test 2:
 change to: <xsl:template match="/catalog">
 same as before.
 
+Test 2-2:
+change to: <xsl:template match="/catalog123">
+why?
+in this case, this <xsl:template match="/catalog123"> can't find match node, so it is not used.
+then, it will go through the process described at the end of this note.txt.
+
+Test 2-3:
+change to:
+    <xsl:template match="/catalog/cd">
+        <html>
+            <body>
+                <h2>My CD Collection</h2>
+                <xsl:apply-templates select="country"/>
+            </body>
+        </html>
+    </xsl:template>
+
+it seems, for the not selected part, "I am here.", "cd2", it will go through the process described at the bottom of this note.txt.
+(it means if you don't define template for root, you should define template for all of its child node, otherwise, it will go through the process)
+
+for the selected part, if it can't find the matching template, it don't do any thing.
+(for the selected part, if only parts of its node operated, the other node don't go through the process)
+
 Test 3:
 change to: <xsl:template match="/catalog/">
 error.
@@ -100,6 +123,13 @@ take effect.
 you can switch the order of these 2 element, to see the meaning of:
 "If several templates have the same priority, the last in the style sheet is chosen."
 
-actually, the <xsl:apply-templates/> is not necessary, you can use <xsl:template match=""> to trigger the process.
+actually, the <xsl:apply-templates/> is not necessary, you can use <xsl:template match="/"> to trigger the process.
 using <xsl:apply-templates/> is a way to specify the entry point, and you can have something around this entry point.
 Without it, you need to put these "something" inside of the root template.
+
+if you don't have <xsl:apply-templates/>, or you have it but it not used.
+I guess it will try from root node, it will try to find out template <xsl:template match="/">, if you don't have it.
+it will try first layer under root node, list every node, for each node, it will try to find out the matching template.
+if it find out the template, it will using this template, and not go deeper for this node.
+if it can't find out the template for this node, it will loop the node list under this node, try to find out the matching template.
+go through this process until it find out the content of the end node, then it just print out the content.

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
+    I am here.
     <cd>
         <title>Empire Burlesque</title>
         <artist>Bob Dylan</artist>
@@ -16,6 +17,14 @@
         <price>9.90</price>
         <year>1988</year>
     </cd>
+    <cd2>
+        <title>Hide your heart</title>
+        <artist>Bonnie Tyler</artist>
+        <country>UK</country>
+        <company>CBS Records</company>
+        <price>9.90</price>
+        <year>1988</year>
+    </cd2>
 
 </catalog>
 
