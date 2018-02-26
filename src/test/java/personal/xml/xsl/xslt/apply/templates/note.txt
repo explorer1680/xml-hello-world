@@ -68,6 +68,9 @@ change to:
 
 it seems, for the not selected part, "I am here.", "cd2", it will go through the process described at the bottom of this note.txt.
 (it means if you don't define template for root, you should define template for all of its child node, otherwise, it will go through the process)
+Please note the pring position for "I am here.", "cd2".
+the reason why is because <xsl:template match="/catalog/cd"> is for /catalog/cd, is not from root, the process is looking for 
+<xsl:template match="/"> as entry point, if it don't have, it will go through the process.
 
 for the selected part, if it can't find the matching template, it don't do any thing.
 (for the selected part, if only parts of its node operated, the other node don't go through the process)
@@ -126,6 +129,8 @@ you can switch the order of these 2 element, to see the meaning of:
 actually, the <xsl:apply-templates/> is not necessary, you can use <xsl:template match="/"> to trigger the process.
 using <xsl:apply-templates/> is a way to specify the entry point, and you can have something around this entry point.
 Without it, you need to put these "something" inside of the root template.
+(the above statement is not correct, the entry point is <xsl:template match="/">, the <xsl:apply-templates/> is in this tag.
+you can try, if <xsl:apply-templates/> is not within any <xsl:template match="...">, it not working.
 
 if you don't have <xsl:apply-templates/>, or you have it but it not used.
 I guess it will try from root node, it will try to find out template <xsl:template match="/">, if you don't have it.
