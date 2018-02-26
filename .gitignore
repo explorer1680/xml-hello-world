@@ -29,3 +29,6 @@ target/*
 /target/
 .project
 .classpath
+
+
+output.xml
