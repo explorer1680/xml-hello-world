@@ -8,6 +8,14 @@ For each of the selected nodes, <xsl:apply-templates> directs the XSLT processor
 Templates are tested for applicability by comparing the node to the XPath expression specified in the template's match attribute.
 If more than one template satisfies the match pattern, the one appearing with the highest priority is chosen.
 If several templates have the same priority, the last in the style sheet is chosen.
+(if no template found for the selected nodes, then this nodes is not considered)
+
+Please note, <xsl:apply-templates> is not necessary at all. If <xsl:template match="/"> is defined, this is the entry point of the whole process.
+it no <xsl:template match="/"> defined, then the built-in rule will works.
+Built-in rule for  for element nodes and the root node are:
+    <xsl:template match="/|*">
+        <xsl:apply-templates/>
+    </xsl:template>
 
 Note, 2 kind of tag:
 <xsl:apply-templates select="title"/>
@@ -21,6 +29,68 @@ are different
 
 <xsl:template match="/catalog/"> == <xsl:template match="/catalog/node()">
 it seems that you can't using <xsl:template match="/catalog/"> in this example.
+
+
+compare:
+    <xsl:template match="/catalog">
+        <html>
+            <body>
+                <h2>My CD Collection</h2>
+                <xsl:apply-templates/>
+            </body>
+        </html>
+    </xsl:template>
+
+with:
+    <xsl:template match="/catalog">
+        <html>
+            <body>
+                <h2>My CD Collection</h2>
+                <xsl:apply-templates select="cd"/>
+            </body>
+        </html>
+    </xsl:template>
+
+
+
+modify to:
+    <xsl:template match="/">
+        <html>
+            <body>
+                <h2>My CD Collection</h2>
+                <!--<xsl:apply-templates/>-->
+            </body>
+        </html>
+    </xsl:template>
+it means, when there is a template match "root", the other template will not be considered.
+
+
+comment out:
+    <xsl:template match="/">
+        <html>
+            <body>
+                <h2>My CD Collection</h2>
+                <xsl:apply-templates/>
+            </body>
+        </html>
+    </xsl:template>
+
+the built-in rules apply.
+
+
+
+modify to:
+    <xsl:template match="/">
+        <html>
+            <body>
+                <h2>My CD Collection</h2>
+                <xsl:apply-templates select="title"/>
+                <!--<xsl:apply-templates/>-->
+            </body>
+        </html>
+    </xsl:template>
+it means, it only try to select nodes from first child level of matching element, in this case, no nodes are selected.
+
 
 Test 1:
 remove following:
@@ -43,7 +113,7 @@ remove following:
         <br />
     </xsl:template>
 
-it seems without corresponding template, it just print the content of the element.
+it seems without corresponding template, it just print the content of the element.(built-in rules)
 
 Test 2:
 change to: <xsl:template match="/catalog">
@@ -138,3 +208,8 @@ it will try first layer under root node, list every node, for each node, it will
 if it find out the template, it will using this template, and not go deeper for this node.
 if it can't find out the template for this node, it will loop the node list under this node, try to find out the matching template.
 go through this process until it find out the content of the end node, then it just print out the content.
+
+
+built-in template rule:
+https://msdn.microsoft.com/en-us/library/ms764653(v=vs.85).aspx
+https://docstore.mik.ua/orelly/xml/xmlnut/ch08_07.htm
