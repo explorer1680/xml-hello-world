@@ -4,11 +4,14 @@ https://msdn.microsoft.com/en-us/library/ms256184(v=vs.110).aspx
 
 The <xsl:apply-templates> element first selects a set of nodes using the expression specified in the select attribute.
 If this attribute is left unspecified, all children of the current node are selected.
+(note, the select attribute is to select nodes, not for 'matching' template name)
+(if the node is note selected, then no action will do on it)
 For each of the selected nodes, <xsl:apply-templates> directs the XSLT processor to find an appropriate <xsl:template> to apply.
 Templates are tested for applicability by comparing the node to the XPath expression specified in the template's match attribute.
 If more than one template satisfies the match pattern, the one appearing with the highest priority is chosen.
 If several templates have the same priority, the last in the style sheet is chosen.
 (if no template found for the selected nodes, then this nodes is not considered)
+(the above statement is not correct, if no template found for the selected nodes, the "built-in template" rule apply)
 
 Please note, <xsl:apply-templates> is not necessary at all. If <xsl:template match="/"> is defined, this is the entry point of the whole process.
 it no <xsl:template match="/"> defined, then the built-in rule will works.
