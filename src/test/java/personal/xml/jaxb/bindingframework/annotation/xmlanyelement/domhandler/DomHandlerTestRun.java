@@ -21,12 +21,12 @@ public class DomHandlerTestRun {
         for(Object obj: root.getAny()){
             System.out.println(obj.getClass());
         }
-
+        System.out.println("__________________________");
         Marshaller marshaller = context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
-//        marshaller.marshal(root, System.out);
+        marshaller.marshal(root, System.out);
 
-
+        System.out.println("__________________________");
         DataWriter dataWriter = new DataWriter(new PrintWriter(System.out), "UTF-8", new MyEscapeHandler());
         marshaller.marshal(root, dataWriter);
     }

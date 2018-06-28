@@ -17,6 +17,7 @@ public class DOMResultHandler implements DomHandler<E, DOMResult> {
     @Override
     public E getElement(DOMResult rt) {
         System.out.println(((Document)rt.getNode()).getDocumentElement().getTextContent());//Please note, there is empty line under "DE"
+        System.out.println(((Document)rt.getNode()).getDocumentElement().getElementsByTagName("d").item(0).getTextContent());
         return new E();
     }
 

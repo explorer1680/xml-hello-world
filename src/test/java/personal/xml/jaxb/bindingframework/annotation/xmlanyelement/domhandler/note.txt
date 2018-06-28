@@ -1,3 +1,7 @@
+In this test case, include jaxb.properties into the package or not will have different result.
+If you include this file, it will using MOXy's implementation, and the "marshal" method inside of the DomHandler is be called.
+If you don't include it, it will using the builtin implementation, and the "marshal" method inside the DomHandler will not been called.
+
 Note 1:
 If A.class in not in JAXBContext.newInstance(), the element "a" will be:
 personal.xml.jaxb.bindingframework.annotation.xmlanyelement.domhandler.E
@@ -18,17 +22,41 @@ If you have defined value="CHandler", the returned object will comes from method
 String getElement(StreamResult rt)
 
 Note 4:
-It seems that if want to let the handler do the unmarshal and marshal,
-the object returned from "String getElement(StreamResult rt)" must have @XmlRootElement annotation.
-
-If you don't need to marshal it, it is ok to return any thing.
+It seems that in builtin implementation, if you want to let the handler do the unmarshal, you don't have any problem.
+But, if you want to let the hander do the marshal,
+the object returned from "Type getElement(StreamResult rt)" must have @XmlRootElement annotation.
 
 Note 5:
 you can think of (lax=true) try to find out the correct type if it is JAXBElement or your definition, the other type is dom.ElementNSImpl.
 and value="CHandler" deal with dom.ElementNSImpl.
 
-Note 6:
+Note 6: if you define like:
+@XmlAnyElement(StringHandler.class)
+then, all the element go to this StringHandler even if you have already defined JAXBEelement and RootElement.
+
+Note 7:
 how to output '<' instead of &lt;
 the reason why you get '&lt;' is because that in the unmarshal step, the dom.ElementNSImpl object has been converted by DomHandler.
 Here, is the E.class, and the xml content of the dom.ElementNSImpl convert to String, and, when output string in marshal method,
 it by default using '&lt;' for '<'. Using CharacterEscapeHandler to change this behavior.
+
+Note 8:
+Please note, in default implementation, even the marshal method is called, the "marshal" method inside of the DomHandler is not called.
+In this case, the whole element is String content, no structure is parse, that is why the "<" become "&lt;".
+If you want to parse the structure of content, you should add jaxb.properties and use MOXy implementation.
+http://blog.bdoughan.com/2011/04/xmlanyelement-and-non-dom-properties.html
+
+Note 9:
+If you define the DomHandler as:
+ DomHandler<String, StreamResult> and using the builtin implementation,
+ then, the marshal will fail because the first parameter is type String, even if it actually not go into the marshal method inside of the DomHandler.
+
+Note 10:
+when using @XmlAnyElement, the whole logic is: (when lax=true, and you define the handler)
+When unmarshal, the xml is parsed, if the element is predefined by @XmlRoot or ObjectFactory, it is parse as normal JAXB @XmlRoot element.
+If it is not defined, it will pass to handler's "Type getElement(DOMResult rt)" method, and return and object as a element,
+normally, it is a String that corresponding to the input file.
+When marshal,
+if we using builtin implementation, the element corresponding to @XmlRoot or ObjectFactory will marshal normally,
+but the element coming from handler will parse as String content even if it has the structure.
+If we want to marshal the String content as a structured xml, we should using MOXy implementation.
