@@ -14,7 +14,7 @@ If several templates have the same priority, the last in the style sheet is chos
 (the above statement is not correct, if no template found for the selected nodes, the "built-in template" rule apply)
 
 Please note, <xsl:apply-templates> is not necessary at all. If <xsl:template match="/"> is defined, this is the entry point of the whole process.
-it no <xsl:template match="/"> defined, then the built-in rule will works.
+if no <xsl:template match="/"> defined, then the built-in rule will works.
 Built-in rule for  for element nodes and the root node are:
     <xsl:template match="/|*">
         <xsl:apply-templates/>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <svgData id="cash_flow">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+             class="highcharts-root"
+             style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;"
+             width="1110" height="500" viewBox="0 0 1110 500">
+            <desc>Created with Highcharts 6.2.0</desc>
+            <defs>
+                <clipPath id="highcharts-8xs8t48-326">
+                    <rect x="0" y="0" width="980" height="390" fill="none"/>
+                </clipPath>
+            </defs>
+            <rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1110" height="500" rx="0" ry="0"/>
+            <rect fill="none" class="highcharts-plot-background" x="56" y="10" width="980" height="390"/>
+            <g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 80.5 10 L 80.5 400" opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 105.5 10 L 105.5 400" opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 130.5 10 L 130.5 400" opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 156.5 10 L 156.5 400" opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 181.5 10 L 181.5 400" opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 206.5 10 L 206.5 400" opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 985.5 10 L 985.5 400" opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 1010.5 10 L 1010.5 400"
+                      opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 1035.5 10 L 1035.5 400"
+                      opacity="1"/>
+                <path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 55.5 10 L 55.5 400" opacity="1"/>
+            </g>
+
+            <text x="1100" class="highcharts-credits" text-anchor="end" data-z-index="8"
+                  style="cursor:pointer;color:#999999;font-size:9px;fill:#999999;" y="495">Highcharts.com
+            </text>
+        </svg>
+    </svgData>
+</root>

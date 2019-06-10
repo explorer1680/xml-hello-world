@@ -1,0 +1,13 @@
+Please note:
+
+value-of will return only the:
+<?xml version="1.0" encoding="UTF-8"?>
+actually, the "value-of" only return text.
+
+https://www.w3schools.com/xml/xpath_nodes.asp
+http://www.adrianlynch.com/view/blog/xsl-copy-of-and-value-of
+
+<xsl:copy-of select="/root/svgData[@id='cash_flow']/svg" />
+will not working, because the xmlns="http://www.w3.org/2000/svg" in side of the svg element.
+
+https://stackoverflow.com/questions/5239685/xml-namespace-breaking-my-xpath
