@@ -8,3 +8,9 @@ It seems that @XmlType is only used when the class is derived from schema.
 
 Note 2:
 If you using jaxb.index, you need only Flight class in that file.
+
+Please note, in the TestRun,
+if you using:
+JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework._1create.jaxb.context.nonschemaderived.usingclass");
+it is an example of using index.
+
