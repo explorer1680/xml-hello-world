@@ -1,0 +1,12 @@
+the fop project has already include the xalan-java project, they both comes from Apache
+
+xalan is a XSLT processor.
+https://www.iis.sinica.edu.tw/~trc/public/courses/Spring2007/week5/xalan-howto.html
+
+example:
+https://www.leveluplunch.com/java/tutorials/020-transform-xslt-xml-to-html-using-java-with-apache-xalan/
+
+in this example, it looks same as builtin processor.
+
+xalan extension:
+https://xml.apache.org/xalan-j/extensions.html
