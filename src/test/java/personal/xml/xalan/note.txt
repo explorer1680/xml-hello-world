@@ -7,6 +7,9 @@ example:
 https://www.leveluplunch.com/java/tutorials/020-transform-xslt-xml-to-html-using-java-with-apache-xalan/
 
 in this example, it looks same as builtin processor.
+actually, the builtin processor is:
+com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl
+it is also the xalan implementation.
 
 xalan extension:
 https://xml.apache.org/xalan-j/extensions.html
