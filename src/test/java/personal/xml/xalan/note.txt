@@ -1,4 +1,4 @@
-the fop project has already include the xalan-java project, they both comes from Apache
+the fop project has already included the xalan-java project, they both comes from Apache
 
 xalan is a XSLT processor.
 https://www.iis.sinica.edu.tw/~trc/public/courses/Spring2007/week5/xalan-howto.html
@@ -6,7 +6,7 @@ https://www.iis.sinica.edu.tw/~trc/public/courses/Spring2007/week5/xalan-howto.h
 example:
 https://www.leveluplunch.com/java/tutorials/020-transform-xslt-xml-to-html-using-java-with-apache-xalan/
 
-in this example, it looks same as builtin processor.
+in this example, it looks as same as builtin processor.
 actually, the builtin processor is:
 com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl
 it is also the xalan implementation.

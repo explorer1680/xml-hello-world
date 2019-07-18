@@ -3,3 +3,11 @@ how the format different with/without @XmlElementWrapper(name="documents")
 
 Note 2:
 It seems that you put another layer between Configuration and Document may have same result as @XmlElementWrapper.
+
+Note 3:
+If you don't have @XmlRootElement(name ="doc2") on Document class, it don't complaint about the missing default constructor, if you have the @XmlRootElement on it, you get following error info:
+personal.xml.jaxb.bindingframework.annotation.elementwrapper.Document does not have a no-arg default constructor.
+
+Note 4:
+The @XmlRootElement(name ="doc2") don't control the element name if the Document inside of Configuration.
+It only control the element name if Document is a root element.
