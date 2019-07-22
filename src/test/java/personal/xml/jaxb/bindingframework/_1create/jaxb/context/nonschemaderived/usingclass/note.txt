@@ -14,3 +14,6 @@ if you using:
 JAXBContext context = JAXBContext.newInstance("personal.xml.jaxb.bindingframework._1create.jaxb.context.nonschemaderived.usingclass");
 it is an example of using index.
 
+Note 3:
+the @XmlAccessorType's default value is public field or public getter and setter.
+I guess, for getter and setter are used when marshaller or unmarshaller, if you want to unmarshaller and then marshaller, you have to define public getter and setter same time.
