@@ -1,0 +1,45 @@
+when following error happens?
+[com.sun.istack.internal.SAXException2: unable to marshal type "java.lang.String" as an element because it is missing an @XmlRootElement annotation]
+
+when you have String field in the Class annotated with @XmlRootElement, it is ok.
+
+But, when you have A field in that Class(even you define the type is Object, not String), and you have @XmlAnyElement(handler) defined on it,
+and the handler has following definition:
+    public class StringHandler implements DomHandler<String, xxxResult>
+or
+    public class StringHandler implements DomHandler<Object, xxxResult> (I think any type except XmlRootElement)
+
+you will get this error when marshall the object.
+    [com.sun.istack.internal.SAXException2: unable to marshal type "java.lang.String" as an element because it is missing an @XmlRootElement annotation]
+
+
+That because the method:
+    public String getElement(StreamResult rt) {  ...}
+return a String, and when Marshal the object, even you define the method:
+    public Source marshal(String n, ValidationEventHandler errorHandler) {...}
+on the Handler, it is not called when using the default JAXBContext. And the framework can't marshal String directly.
+
+You can use MOXy to deal with. The reason why MOXy works is because MOXy will call the marshal method on the Handler.
+
+You can define:
+public class AHandler implements DomHandler<Object, StreamResult> {
+...}
+
+and in method:
+    public Object getElement(StreamResult rt) {...}
+return String or Double etc.
+
+you will have error info:
+[com.sun.istack.internal.SAXException2: unable to marshal type "java.lang.String" as an element because it is missing an @XmlRootElement annotation]
+or
+[com.sun.istack.internal.SAXException2: unable to marshal type "java.lang.Double" as an element because it is missing an @XmlRootElement annotation]
+(you have to change Customer's bio to String)
+
+another work around:
+using JAXBElement:
+https://stackoverflow.com/questions/26166751/problems-with-jaxb-marshal-unable-to-marshal-type-java-lang-string
+
+Why when you use default JAXBContext, it don't call the method:
+     public Source marshal(String n, ValidationEventHandler errorHandler) {...}
+I guess, when you use @XmlAnyElement, normally you only need to unmarshal method to read from xml file. You don't need to marshal it.
+Because you don't have the Class corresponding to xml, then you don't have the need to marshal it.
