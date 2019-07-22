@@ -1,11 +1,46 @@
+in Root.class, there are 2 type of field,
+1. Class defined by @XmlRootElement or ObjectFactory.
+2. Object annotated with @XmlAnyElement
+When unmarshaller xml,
+1. it will try to use Class defined by @XmlRootElement or ObjectFactory.
+2. then it will try to use @XmlAnyElement mechanism.
+
+no @XmlAnyElement,  @XmlAnyElement on Object, @XmlAnyElement on Object list
+In this test case, you unmarshaller xml file, and marshaller Root.
+If you don't define @XmlAnyElement, you will lost the undefined xml element.
+if the @XmlAnyElement define an Object, then only the last part keeps in Root.
+If the @XmlAnyElement define an Object list, then all of the part keeps in Root.
+If you just define @XmlAnyElement but don't define any thing like (lax=true, value="..."), the unmarshaller and marshaller still working.
+
+lax=true or not
+the default value for lax is false. In this case, the unmarshaller will return com.sun.org.apache.xerces.internal.dom.ElementNSImpl for all xml element it find, whether it has definition or not.
+if the lax=true:
+for element defined with @XmlRootElement, it will return that class.
+for element defined with ObjectFactory, it will return javax.xml.bind.JAXBElement.
+for element undefined, it will return com.sun.org.apache.xerces.internal.dom.ElementNSImpl.
+
+value=handler or not.
+If you don't define handler, it is ok, when you unmarshaller and marshaller the xml file, you don't lose anything.
+handler is to do something for the com.sun.org.apache.xerces.internal.dom.ElementNSImpl object passed to it.
+that means, when you have lax=true, only undefined xml element pass to it.
+when you have lax=false, all of the xml element pass to it.
+
+
+
 In this test case, include jaxb.properties into the package or not will have different result.
 If you include this file, it will using MOXy's implementation, and the "marshal" method inside of the DomHandler is be called.
 If you don't include it, it will using the builtin implementation, and the "marshal" method inside the DomHandler will not been called.
+(but, in current test case, when you using MOXy, it will have errors
+because in method:
+public E getElement(DOMResult rt) {...}
+it has error, you can comment out some line in this method.
+)
 
 Note 1:
 If A.class in not in JAXBContext.newInstance(), the element "a" will be:
 personal.xml.jaxb.bindingframework.annotation.xmlanyelement.domhandler.E
-because, it is dom.ElementNSImpl then pass to CHandler, then getElement method return domhandler.E
+because, in Root.class, you don't include A.class, so, if you don't include it in JAXBContext.newInstance(),
+it is dom.ElementNSImpl then pass to CHandler, then getElement method return domhandler.E
 
 Even B.class and ObjectFactory.class is not in JAXBContext.newInstance(), the element "b" is always a JAXBElement.
 
@@ -21,6 +56,9 @@ com.sun.org.apache.xerces.internal.dom.ElementNSImpl
 If you have defined value="CHandler", the returned object will comes from method:
 String getElement(StreamResult rt)
 
+https://www.w3schools.com/xml/el_any.asp
+where lax comes from, the default value is false.
+
 Note 4:
 It seems that in builtin implementation, if you want to let the handler do the unmarshal, you don't have any problem.
 But, if you want to let the hander do the marshal,
@@ -33,6 +71,9 @@ and value="CHandler" deal with dom.ElementNSImpl.
 Note 6: if you define like:
 @XmlAnyElement(StringHandler.class)
 then, all the element go to this StringHandler even if you have already defined JAXBEelement and RootElement.
+that is because you use the default value "false" to lax.
+
+
 
 Note 7:
 how to output '<' instead of &lt;
@@ -58,5 +99,12 @@ If it is not defined, it will pass to handler's "Type getElement(DOMResult rt)" 
 normally, it is a String that corresponding to the input file.
 When marshal,
 if we using builtin implementation, the element corresponding to @XmlRoot or ObjectFactory will marshal normally,
-but the element coming from handler will parse as String content even if it has the structure.
-If we want to marshal the String content as a structured xml, we should using MOXy implementation.
+but the element coming from handler will marshal directly, if that element is String or Double, it will have error coming out.
+
+Note 11:
+Please note, in the:
+public class DOMResultHandler implements DomHandler<E, DOMResult> {
+}
+you can use DOMResult or JAXBResult, SAAJResult, SAXResult, StAXResult, StreamResult
+
+

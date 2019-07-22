@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 public class DomHandlerTestRun {
     public static void main(String[] args) throws JAXBException, IOException {
         JAXBContext context = JAXBContext.newInstance(Root.class, A.class, E.class);
+//        System.out.println(context);
 
         Unmarshaller unmarshaller = context.createUnmarshaller();
         Root root = (Root)unmarshaller.unmarshal(new ClassPathResource("personal/xml/jaxb/bindingframework/annotation/xmlanyelement/domhandler/domhandler.xml").getInputStream());
