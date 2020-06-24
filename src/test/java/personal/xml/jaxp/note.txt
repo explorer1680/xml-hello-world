@@ -1,9 +1,9 @@
 https://en.wikipedia.org/wiki/Java_API_for_XML_Processing
 
 JAXP (Java API for XML Processing) include 3 basic parsing interface:
-DOM
-SAX
-StAX
+DOM (Document Object Model)
+SAX (Simple API for XML)
+StAX (Streaming API for XML)
 In addition to the parsing interfaces, the API provides an XSLT interface to provide data and structural transformations on an XML document.
 
 StAX was designed as a median between the DOM and SAX interface.
