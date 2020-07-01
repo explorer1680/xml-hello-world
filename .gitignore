@@ -32,3 +32,8 @@ target/*
 
 
 output.xml
+/.factorypath
+
+/bin
+.settings/
+

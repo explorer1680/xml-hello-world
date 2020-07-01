@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE img [
+  <!ELEMENT img EMPTY>
+  <!ATTLIST img src ENTITY #REQUIRED> 
+  <!ENTITY companyLogo PUBLIC "-//W3C//GIF logo//EN" "http://www.w3.org/logo.gif" NDATA gif>
+  <!NOTATION gif PUBLIC "gif viewer">
+]>
+<img src="companyLogo"/> 

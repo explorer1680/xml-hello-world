@@ -1,0 +1,31 @@
+https://www.liquid-technologies.com/XML/EntityRefs.aspx#ParsedInternalGeneralEntityDeclaration
+
+in entity1.xml, when you have:
+	<predefined>2 &lt; 5</predefined>
+it will not show error.
+the output is still:
+	<predefined>2 &lt; 5</predefined>
+
+when you have:
+	<predefined>2 < 5</predefined>
+it will show error, this error comes from the editor.
+the output also should error.
+
+when you have:
+	<predefined>2 > 5</predefined>
+it will not show error, the editor not complaint about it.
+the output is:
+	<predefined>2 &gt; 5</predefined>
+
+	
+you can use Parsed Internal Parameter Entity like this:
+	http://www.brenkoweb.com/tutorials/xml/xml-entities/parsed-entities-internal-and-external
+if you want to use Parsed Internal Parameter Entity inside of another Entity
+you have to use an external DTD, i.e. the separate file.
+	https://stackoverflow.com/questions/39549360/parameter-entities-in-internal-dtd
+	
+you can use Parsed Internal General Entity in another Entity difinition, example:
+	entity_recursion.xml
+
+It looks you can't define Entity in xsl, but you can use it.
+	https://www.oxygenxml.com/forum/topic4968.html
