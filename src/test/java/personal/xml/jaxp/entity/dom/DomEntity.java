@@ -28,7 +28,7 @@ public class DomEntity {
 	
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        factory.setExpandEntityReferences(false);
+        factory.setExpandEntityReferences(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
 //        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/entity1.xml").getInputStream());
 //        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/internal_parameter_entity.xml").getInputStream());
