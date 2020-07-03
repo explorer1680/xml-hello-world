@@ -24,7 +24,7 @@ if you want to use Parsed Internal Parameter Entity inside of another Entity
 you have to use an external DTD, i.e. the separate file.
 	https://stackoverflow.com/questions/39549360/parameter-entities-in-internal-dtd
 	
-you can use Parsed Internal General Entity in another Entity difinition, example:
+you can use Parsed Internal General Entity in another Entity definition, example:
 	entity_recursion.xml
 
 It looks you can't define Entity in xsl, but you can use it.

@@ -1,0 +1,6 @@
+setFeature(String, boolean) method, feature list:
+
+https://xerces.apache.org/xerces2-j/features.html
+http://xerces.apache.org/xerces-j/features.html
+
+it looks there are 2 versions, which is supported by java version 6, 7, 8..., where to find these informations?

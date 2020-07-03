@@ -17,7 +17,9 @@ public class StaxEventReader {
     public static void main(String[] args) throws TransformerException, IOException, XMLStreamException {
 
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-        XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_inject.xml").getInputStream());
+        xmlInputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+//        XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_inject.xml").getInputStream());
+        XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new ClassPathResource("personal/xml/jaxp/entity/dom/entity1.xml").getInputStream());
 
         StAXSource source = new StAXSource(xmlEventReader);
 
