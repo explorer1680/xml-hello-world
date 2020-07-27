@@ -27,6 +27,7 @@ public class SaxReader {
 		// method 2 to get XMLReader: (it not works)
 		// com.sun.org.apache.xerces.internal.parsers.SAXParser
 		XMLReader reader = XMLReaderFactory.createXMLReader();
+		reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
 
 		SAXSource source = new SAXSource(reader,
 				new InputSource(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_inject.xml").getInputStream()));

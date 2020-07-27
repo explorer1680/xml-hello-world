@@ -22,6 +22,9 @@ public class SaxParser {
 			throws SAXException, IOException, TransformerException, ParserConfigurationException {
 
 		SAXParserFactory parserFactory = SAXParserFactory.newInstance();
+
+        parserFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+
 		SAXParser parser = parserFactory.newSAXParser();
 		System.out.println(parser.getClass());
 		XMLReader reader = parser.getXMLReader();

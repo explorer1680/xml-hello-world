@@ -56,6 +56,8 @@ public class DomEntity {
 //        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_inject.xml").getInputStream());
 			Document document = builder
 					.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/entity_recursion.xml").getInputStream());
+//			Document document = builder
+//					.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/normal.xml").getInputStream());
 
 			XPathFactory xPathFactory = XPathFactory.newInstance();
 			XPath xPath = xPathFactory.newXPath();

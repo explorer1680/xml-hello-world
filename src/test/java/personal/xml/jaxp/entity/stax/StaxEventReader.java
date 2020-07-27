@@ -17,9 +17,10 @@ public class StaxEventReader {
     public static void main(String[] args) throws TransformerException, IOException, XMLStreamException {
 
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-        xmlInputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
-//        XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_inject.xml").getInputStream());
-        XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new ClassPathResource("personal/xml/jaxp/entity/dom/entity1.xml").getInputStream());
+//        xmlInputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+        xmlInputFactory.setProperty("http://apache.org/xml/features/disallow-doctype-decl", true);
+        XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_inject.xml").getInputStream());
+//        XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new ClassPathResource("personal/xml/jaxp/entity/dom/entity1.xml").getInputStream());
 
         StAXSource source = new StAXSource(xmlEventReader);
 
