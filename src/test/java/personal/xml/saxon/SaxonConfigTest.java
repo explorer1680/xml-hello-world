@@ -14,7 +14,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import net.sf.saxon.lib.FeatureKeys;
 
-public class SaxonSetting {
+public class SaxonConfigTest {
 	
 	public static void main(String[] args) throws IOException, TransformerException {
 //	    TransformerFactoryImpl factory = new TransformerFactoryImpl();
