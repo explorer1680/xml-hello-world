@@ -1,0 +1,8 @@
+this is show how Saxon setting properties like disable external entity
+
+
+https://sourceforge.net/p/saxon/mailman/saxon-help/thread/4242a30c-cac7-4b1d-3d1a-eb5d6552c347%40noaa.gov/#msg36473894
+
+
+using SOURCE_PARSER_CLASS
+https://www.w3.org/2005/08/online_xslt/SaxonSavvyServlet.java
