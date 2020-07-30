@@ -6,6 +6,7 @@ import org.xml.sax.XMLFilter;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import javax.xml.XMLConstants;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXTransformerFactory;
@@ -20,6 +21,12 @@ public class ChainWithFilterTestRun {
         StreamSource xsl2 = new StreamSource(new ClassPathResource("personal/xml/jaxp/trax/chain/filter/votesOnly.xsl").getInputStream());
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
+//        TransformerFactory transformerFactory = TransformerFactory.newInstance("com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl", null);
+
+        
+        transformerFactory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+        transformerFactory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
+        
         SAXTransformerFactory factory = (SAXTransformerFactory)transformerFactory;
 
         XMLFilter filter1 = factory.newXMLFilter(xsl1);

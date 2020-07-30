@@ -27,6 +27,15 @@
             <artifactId>derbyclient</artifactId>
             <version>10.13.1.1</version>
         </dependency>
+        
+        
+        <!-- https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE -->
+		<dependency>
+		    <groupId>net.sf.saxon</groupId>
+		    <artifactId>Saxon-HE</artifactId>
+		    <version>10.1</version>
+		</dependency>
+        
 
         <!-- spring -->
         <dependency>
