@@ -1,0 +1,8 @@
+parserFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+will throw exception when you have doctype in the xml.
+
+parserFactory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+parserFactory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+parserFactory.setFeature("http://javax.xml.XMLConstants/feature/secure-processing", true);        	
+these settings will just ignore the doctype without throw exceptions.
+

@@ -23,7 +23,10 @@ public class SaxParser {
 
 		SAXParserFactory parserFactory = SAXParserFactory.newInstance();
 
-        parserFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+//        parserFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+		parserFactory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        parserFactory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        parserFactory.setFeature("http://javax.xml.XMLConstants/feature/secure-processing", true);        	
 
 		SAXParser parser = parserFactory.newSAXParser();
 		System.out.println(parser.getClass());
