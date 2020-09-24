@@ -44,19 +44,29 @@ public class DomEntity {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			factory.setExpandEntityReferences(true);
-//        factory.
-
-			factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
-
-			factory.setFeature("http://javax.xml.XMLConstants/feature/secure-processing", true);
-			factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			
+	        factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+	        factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+	        factory.setFeature("http://javax.xml.XMLConstants/feature/secure-processing", true);
+//	        factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+			
+	        factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+			
+			
 			DocumentBuilder builder = factory.newDocumentBuilder();
 //        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/entity1.xml").getInputStream());
+//        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/entity3.xml").getInputStream());
 //        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/internal_parameter_entity.xml").getInputStream());
 //        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_inject.xml").getInputStream());
+//        Document document = builder.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/xxe_http.xml").getInputStream());
+			
+			
 			Document document = builder
 					.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/entity_recursion.xml").getInputStream());
-//			Document document = builder
+
+			
+			
+			//			Document document = builder
 //					.parse(new ClassPathResource("personal/xml/jaxp/entity/dom/normal.xml").getInputStream());
 
 			XPathFactory xPathFactory = XPathFactory.newInstance();
@@ -77,7 +87,7 @@ public class DomEntity {
 			StreamResult streamResult = new StreamResult(stringWriter);
 
 			TransformerFactory tf = TransformerFactory.newInstance();
-			tf.setAttribute("indent-number", new Integer(4));
+//			tf.setAttribute("indent-number", new Integer(4));
 			Transformer transformer = tf.newTransformer();
 
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
