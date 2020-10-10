@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Order xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <MessageTypeCode>SOL1V400</MessageTypeCode>
+        <OrderDetailId>5654008</OrderDetailId>
+        <Guid>737e1ec1-42d1-45b6-ac73-86b0be8b172c</Guid>
+        <CreatedByUserName>quickennexsys</CreatedByUserName>
+        <CreatedDateTime>2020-10-09T03:46:23.6538059-04:00</CreatedDateTime>
+        <Password>XXXX</Password>
+    </Header>
+    <ClientPartnerId>14</ClientPartnerId>
+    <VendorPartnerId>20055</VendorPartnerId>
+    <ClientReferenceNumber>3461675888-00000002</ClientReferenceNumber>
+    <VendorReferenceNumber>OR6296409</VendorReferenceNumber>
+    <ClientInformation>
+        <ClientReferenceNumber>20555</ClientReferenceNumber>
+    </ClientInformation>
+    <OrderTypeCode>Residential</OrderTypeCode>
+    <OrderIdentifiers/>
+    <Transactions>
+        <Transaction>
+            <ClientReferenceNumber>3461675888</ClientReferenceNumber>
+            <IsPrimary>true</IsPrimary>
+            <LoanAmount xsi:nil="true"/>
+            <PurchasePrice xsi:nil="true"/>
+            <InsuredLoanAmount xsi:nil="true"/>
+            <EstimatedMarketValue xsi:nil="true"/>
+            <NumberOfExistingLiens xsi:nil="true"/>
+            <HasOwnershipChanged>false</HasOwnershipChanged>
+            <SalesAgreementDate>0001-01-01T00:00:00</SalesAgreementDate>
+            <DateAcquired>0001-01-01T00:00:00</DateAcquired>
+            <AnticipatedClosingDate>2020-10-19T00:00:00</AnticipatedClosingDate>
+            <AnticipatedClosingDateIsConfirmed xsi:nil="true"/>
+            <RateLockDate>0001-01-01T00:00:00</RateLockDate>
+            <IsCashOut>false</IsCashOut>
+            <ClientLiens/>
+            <Products>
+                <Appraisal>
+                    <ClientReferenceNumber>00000002</ClientReferenceNumber>
+                    <FailedRules/>
+                    <AppraiserInformation>
+                        <WorkPhoneNumber>0</WorkPhoneNumber>
+                        <FaxNumber>0</FaxNumber>
+                        <IsFHAAppraiser>false</IsFHAAppraiser>
+                        <IsStaffAppraiser>false</IsStaffAppraiser>
+                        <ServiceInformation>
+                            <StatusCode>Update</StatusCode>
+                            <AppointmentDateTime>0001-01-01T00:00:00</AppointmentDateTime>
+                            <AppointmentTimeOffset xsi:nil="true"/>
+                            <ProjectedCompletionDateTime>0001-01-01T00:00:00</ProjectedCompletionDateTime>
+                            <FinalInspectionDate xsi:nil="true"/>
+                            <EffectiveDate>0001-01-01T00:00:00</EffectiveDate>
+                            <AppraisalMarginFee>0</AppraisalMarginFee>
+                            <AppraisalFee>0</AppraisalFee>
+                            <HUDLineNumber>0</HUDLineNumber>
+                            <IsAppraisalReceived>false</IsAppraisalReceived>
+                        </ServiceInformation>
+                        <LicenseExpirationDate>0001-01-01T00:00:00</LicenseExpirationDate>
+                    </AppraiserInformation>
+                    <IsFEMA>false</IsFEMA>
+                    <AppraisalContingencyDate>0001-01-01T00:00:00</AppraisalContingencyDate>
+                    <FinanceContingencyDate>0001-01-01T00:00:00</FinanceContingencyDate>
+                    <AppraisalSlot>0</AppraisalSlot>
+                </Appraisal>
+                <Datas/>
+            </Products>
+            <ExistingMortgage>false</ExistingMortgage>
+            <WithSameLender>false</WithSameLender>
+            <ScheduledClosingDate>0001-01-01T00:00:00</ScheduledClosingDate>
+            <LoanTermYears>0</LoanTermYears>
+            <InterestRate>0</InterestRate>
+            <HomeOwnersAssociationMonthlyDuesAmount>0</HomeOwnersAssociationMonthlyDuesAmount>
+            <LoanEstimateDate>0001-01-01T00:00:00</LoanEstimateDate>
+            <BaseLoantoValuePercentage>0</BaseLoantoValuePercentage>
+            <IsBankrupt>false</IsBankrupt>
+            <LoanTermCount>0</LoanTermCount>
+            <IsPropertyInspectionWaiver>false</IsPropertyInspectionWaiver>
+            <HousingExpenses/>
+            <Assets/>
+            <Expenses/>
+            <Liabilities/>
+            <IsRelocation>false</IsRelocation>
+            <ApplicationReceivedDate xsi:nil="true"/>
+            <IsArmsLength>false</IsArmsLength>
+            <IsBelowMarketSubordinateFinancing>false</IsBelowMarketSubordinateFinancing>
+            <IsPrepaymentPenalty>false</IsPrepaymentPenalty>
+            <DownPayments/>
+            <CombinedLTVs/>
+            <RescissionDate xsi:nil="true"/>
+        </Transaction>
+    </Transactions>
+    <Documents/>
+    <Notes/>
+    <Contacts/>
+    <OrderHolds/>
+    <Actions/>
+    <Relationships/>
+    <AssociatedOrderDetailId>0</AssociatedOrderDetailId>
+    <Consents/>
+    <Changes/>
+</Order>

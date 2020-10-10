@@ -20,7 +20,15 @@ public class SaxonConfigTest {
 //	    TransformerFactoryImpl factory = new TransformerFactoryImpl();
 	    TransformerFactory factory = TransformerFactory.newInstance();
 	    
-//	    factory.setAttribute("http://saxon.sf.net/feature/parserFeature?uri=http://apache.org/xml/features/disallow-doctype-decl", true);
+	    factory.setAttribute("http://apache.org/xml/features/disallow-doctype-decl", true);
+	    
+	    
+//        factory.setAttribute("http://saxon.sf.net/feature/parserFeature?uri=http://xml.org/sa1x/features/external-general-entities", false);
+//        factory.setAttribute("http://saxon.sf.net/feature/parserFeature?uri=http://xml.org/sax/features/external-parameter-entities", false);
+//        factory.setAttribute("http://saxon.sf.net/feature/parserFeature?uri=http://javax.xml.XMLConstants/feature/secure-processing", true);
+        	
+//        factory.setAttribute("http://saxon.sf.net/feature/parserFeature?uri=http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
 
 	    //the following are allow_external_functions, not external_entities
 //	    factory.setAttribute(FeatureKeys.ALLOW_EXTERNAL_FUNCTIONS, Boolean.FALSE);
