@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:number="http://poll.redihive.com/schema/constrain"
+	elementFormDefault="qualified"
+	targetNamespace="http://poll.redihive.com/schema/Poll">
+
+	<xs:import
+		namespace="http://poll.redihive.com/schema/constrain"
+		schemaLocation="number.xsd" />
+
+	<xs:element name="PollRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="language" type="xs:string"></xs:element>
+				<xs:element name="country" type="number:limitednumber"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

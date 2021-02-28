@@ -1,0 +1,43 @@
+complex element definition:
+1. define directly
+	<xs:element name="employee">
+	  <xs:complexType>
+	    <xs:sequence>
+	      <xs:element name="firstname" type="xs:string"/>
+	      <xs:element name="lastname" type="xs:string"/>
+	    </xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+2. define by type
+	<xs:element name="employee" type="personinfo"/>
+	
+	<xs:complexType name="personinfo">
+	  <xs:sequence>
+	    <xs:element name="firstname" type="xs:string"/>
+	    <xs:element name="lastname" type="xs:string"/>
+	  </xs:sequence>
+	</xs:complexType>
+	
+the default value for both minOccurs and maxOccurs are 1.
+
+
+what is xsd:annotation?
+it is the comment on the xsd.
+https://stackoverflow.com/questions/8187193/xsd-annotation-and-documentation-elements-and-how-to-use-them/8191389
+it has appinfo and documentation:
+	<xs:annotation>
+		<xs:appinfo>W3Schools Note</xs:appinfo>
+		<xs:documentation xml:lang="en">This Schema defines a W3Schools note!</xs:documentation>
+	</xs:annotation>
+
+xsd:all vs xsd:sequence
+	xsd:all - "child elements can appear in any order and each child element can occur zero or one time" (ie, maxOccurs can be 0 or 1)
+	xsd:sequence - "child elements must appear in a sequence. Each child element can occur from 0 to any number of times" (ie, maxOccurs can be 0 or any number or 'unbounded')
+https://stackoverflow.com/questions/16101488/difference-between-xsdall-and-xsdsequence-in-schema-definition#:~:text=xsd%3Asequence%20%2D%20%22child%20elements,any%20number%20or%20'unbounded')
+
+version in xsd:
+version attribute vs namespace
+https://stackoverflow.com/questions/2138705/where-to-add-a-version-to-an-xsd-schema
+
+
+

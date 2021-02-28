@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<poll:PollRequest
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:poll="http://poll.redihive.com/schema/Poll"
+	
+	xmlns:number="http://poll.redihive.com/schema/constrain"
+	
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://poll.redihive.com/schema/Poll poll.xsd">
+
+
+
+	<poll:language>en</poll:language>
+	<poll:country>Canada</poll:country>
+</poll:PollRequest>
