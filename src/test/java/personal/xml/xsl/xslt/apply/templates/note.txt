@@ -1,26 +1,76 @@
 https://msdn.microsoft.com/en-us/library/ms256184(v=vs.110).aspx
+http://lenzconsulting.com/how-xslt-works/
 
 we can use the <xsl:template match="..."> only, or we can use it with <xsl:apply-templates>
 the <xsl:apply-templates> is not necessary at all. 
 If <xsl:template match="/"> is defined, this is the entry point of the whole process.
 
+Regardless of what your stylesheet contains, XSLT processing always begins with a virtual call to: call to <xsl:apply-templates select="/"/> . 
+https://stackoverflow.com/questions/1531664/in-what-order-do-templates-in-an-xslt-document-execute-and-do-they-match-on-the
+
+This virtual call constructs the entire result tree, which, after all, is the point of executing a stylesheet.
+http://lenzconsulting.com/how-xslt-works/
+
 the <xsl:apply-templates> should put inside of <xsl:template match="...">.
 
 The <xsl:apply-templates> element first selects a set of nodes using the expression specified in the select attribute.
-If this attribute is left unspecified, all children of the current node are selected.
-(note, the select attribute is to select nodes, not for 'matching' template name)
+If this attribute is left unspecified, it is:
+	<xsl:apply-templates select="node()"/>
+all children of the current node are selected.
+(note, the select attribute is to select nodes, not for 'matching' template name attribute)
 (if the node is not selected, then no action will do on it)
+the <apply-templates> element illustrates the recursive nature of XSLT processing.
+the recursion continues as long as the xsl:apply-templates instruction appears inside an instantiated template rule and is given a non-empty list of nodes to process. 
+This process continues until there are no more nodes to process. 
+At that point, the entire result tree has been constructed.
+
+the select attribute applies templates to the child nodes of the current node. 
+In other words, it populates the current node list with the set of nodes returned by the select expression, and it iterates over them in document order, invoking the best-matching template rule for each node.
+
+It is possible to make xsl:apply-templates iterate over a node-set in an order other than document order. (xsl:sort)
 
 For each of the selected nodes, <xsl:apply-templates> directs the XSLT processor to find an appropriate <xsl:template> to apply.
+
+The value of the match attribute of <xsl:apply-templates> is an XSLT pattern. 
+Unlike an XPath expression, a pattern is not concerned with selecting a set of nodes from a given context.
+Instead, it has a more passive role. The template rule effectively announces “I know how to process xxx elements.”
+The allowed syntax for a pattern is a subset of the allowed syntax for XPath expressions.
+
+A node matches a pattern if the node is a member of the result of evaluating the pattern as an expression with respect to some possible context node.
+
+Because patterns allow only downward-looking axes (child, attribute, and //), 
+the “possible context node” will always be one of the node's ancestors (or the node itself in the case of the pattern “/”).
 
 Templates are tested for applicability by comparing the node to the XPath expression specified in the template's match attribute.
 If more than one template satisfies the match pattern, the one appearing with the highest priority is chosen.
 If several templates have the same priority, the last in the style sheet is chosen.
+
+If multiple templates can match a node, the one with the more specific match expression wins. (pattern 'foo' higher than '*')
+If more than one matching template with the same specificity exist, the one declared last wins.
+(https://stackoverflow.com/questions/4478045/what-are-the-differences-between-call-template-and-apply-templates-in-xsl)
+
+Also, template rules in an imported stylesheet have lower import precedence than template rules in the importing stylesheet.
+
+Thus, there are two steps in this process of elimination:
+	1. The XSLT processor eliminates rules with lower import precedence. (exception:  “xsl:apply-imports”)
+	2. Among the remaining template rules, the XSLT processor eliminates the rules with lower priority.
+It is an error if there is more than one template rule left. 
+If that happens, the XSLT processor can either signal the error or recover by invoking the matching template rule that occurs last in the stylesheet. 
+Most processors will at least give a warning if this happens.
+
+A template rule can explicitly specify its priority using the optional priority attribute on the xsl:template element.
+
+<xsl:apply-templates mode="foo"/>
+<xsl:template match="*" mode="foo">
+when mode is used in apply-template, only the template with the same mode is selected.
+If you leave the mode attribute off of xsl:apply-templates, then only the template rules that have no mode attribute will be considered.
+
+
 (if no template found for the selected nodes, then this nodes is not considered)
 (the above statement is not correct, if no template found for the selected nodes, the "built-in template" rule apply)
 
 if no <xsl:template match="..."> matching for the <xsl:apply-templates select="...">, then the built-in rule will works.
-
+XSLT defines a built-in template rule for each of the seven types of node.
 
 Built-in rule for element nodes and the root node are:
     <xsl:template match="/|*">
@@ -34,6 +84,37 @@ Built-in rule for text and attribute:
 	</xsl:template>
 	
 other rule can be found on the last part of this doc.
+
+
+The content of the xsl:template element (following zero or more optional xsl:param elements) is a “template” for constructing part of the result tree. 
+This “template” can contain both elements and text. 
+Elements in the XSLT namespace are called instructions, elements in an extension namespace are called extension elements, and elements in any other namespace (or no namespace) are called literal result elements.
+
+A text node acts as an instruction to create a corresponding text node in the result tree. 
+In other words, text nodes in the stylesheet are copied to the result tree automatically.
+
+Attributes on literal result elements are interpreted as attribute value templates (AVTs). 
+This means that you can use curly braces ({...}) to insert a dynamically computed value into the attribute value. 
+The curly braces within the attribute delimit an XPath expression evaluated in the current XSLT context.
+
+In addition to the attributes of literal result elements, some attributes of elements in the XSLT namespace are interpreted as AVTs.
+In other words, the curly braces ({...}) have the special meaning. 
+In either case, if you want to include an actual brace character in the resulting attribute value, you can escape it by repeating the brace. 
+In an AVT context, {{ is the escape sequence for {, and }} is the escape sequence for }.
+
+
+All XPath expressions are evaluated in a context. The current node and current node list supply an important part of that context
+the xsl:for-each changes the current node and current node list.
+
+Whitespace-only text nodes in an XSLT stylesheet are considered insignificant and are stripped from the stylesheet tree before XSLT processing begins—except when they occur inside xsl:text elements or elements with the declaration xml:space="preserve". 
+
+Whitespace stripping is also an optional process that can be applied to the source tree before XSLT processing begins. 
+By default, unlike the stylesheet tree, all whitespace is preserved in the source tree.
+
+XSLT processing is primarily concerned with constructing a result tree. 
+Serialization involves converting that result tree to an actual XML stream or file. 
+The xsl:output element is a top-level element that lets you give hints to the XSLT processor about how you want your result tree to be serialized. 
+Technically, the XSLT processor is not required to heed the hints you give it (or even to serialize the result tree at all), but if it does heed your hints, it must follow the rules for interpreting the xsl:output element.
 
 
 
