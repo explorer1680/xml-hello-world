@@ -314,3 +314,14 @@ go through this process until it find out the content of the end node, then it j
 built-in template rule:
 https://msdn.microsoft.com/en-us/library/ms764653(v=vs.85).aspx
 https://docstore.mik.ua/orelly/xml/xmlnut/ch08_07.htm
+
+
+
+https://stackoverflow.com/questions/11744465/xpath-difference-between-node-and-text
+/ is the root element
+/catalog is the document element, it represents the document itself.
+
+The default axis in XPath is the child axis. You can change the axis by prefixing a different axis name. For example: //item/ancestor::produce
+the <xsl:apply-templates/> not include attribute and namespace node, there are not the children of there parent node.
+https://docstore.mik.ua/orelly/xml/xmlnut/ch08_07.htm#:~:text=XSLT%20provides%20a%20default%20built,nodes%20of%20a%20given%20type.
+@* is short for attribute::* and selects all attributes of the context node
