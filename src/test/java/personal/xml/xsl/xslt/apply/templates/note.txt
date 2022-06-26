@@ -31,7 +31,7 @@ It is possible to make xsl:apply-templates iterate over a node-set in an order o
 
 For each of the selected nodes, <xsl:apply-templates> directs the XSLT processor to find an appropriate <xsl:template> to apply.
 
-The value of the match attribute of <xsl:apply-templates> is an XSLT pattern. 
+The value of the match attribute of <xsl:template> is an XSLT pattern. 
 Unlike an XPath expression, a pattern is not concerned with selecting a set of nodes from a given context.
 Instead, it has a more passive role. The template rule effectively announces “I know how to process xxx elements.”
 The allowed syntax for a pattern is a subset of the allowed syntax for XPath expressions.
