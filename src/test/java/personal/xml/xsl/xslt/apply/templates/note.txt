@@ -322,6 +322,6 @@ https://stackoverflow.com/questions/11744465/xpath-difference-between-node-and-t
 /catalog is the document element, it represents the document itself.
 
 The default axis in XPath is the child axis. You can change the axis by prefixing a different axis name. For example: //item/ancestor::produce
-the <xsl:apply-templates/> not include attribute and namespace node, there are not the children of there parent node.
+the <xsl:apply-templates/> will not include attribute and namespace node, they are not the children of there parent node.
 https://docstore.mik.ua/orelly/xml/xmlnut/ch08_07.htm#:~:text=XSLT%20provides%20a%20default%20built,nodes%20of%20a%20given%20type.
 @* is short for attribute::* and selects all attributes of the context node
