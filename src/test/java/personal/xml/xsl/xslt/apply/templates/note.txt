@@ -11,12 +11,12 @@ https://stackoverflow.com/questions/1531664/in-what-order-do-templates-in-an-xsl
 This virtual call constructs the entire result tree, which, after all, is the point of executing a stylesheet.
 http://lenzconsulting.com/how-xslt-works/
 
-the <xsl:apply-templates> should put inside of <xsl:template match="...">.
+the <xsl:apply-templates> should be inside of <xsl:template match="...">.
 
 The <xsl:apply-templates> element first selects a set of nodes using the expression specified in the select attribute.
 If this attribute is left unspecified, it is:
 	<xsl:apply-templates select="node()"/>
-all children of the current node are selected.
+all children of the current node are selected. (current node means the node specified by the surrounding <xsl:template match="...">.
 (note, the select attribute is to select nodes, not for 'matching' template name attribute)
 (if the node is not selected, then no action will do on it)
 the <apply-templates> element illustrates the recursive nature of XSLT processing.
@@ -26,6 +26,8 @@ At that point, the entire result tree has been constructed.
 
 the select attribute applies templates to the child nodes of the current node. 
 In other words, it populates the current node list with the set of nodes returned by the select expression, and it iterates over them in document order, invoking the best-matching template rule for each node.
+
+Please note, the <xsl:apply-templates>/<xsl:if> only check the node under(from) the <xsl:template> match attribute.
 
 It is possible to make xsl:apply-templates iterate over a node-set in an order other than document order. (xsl:sort)
 
@@ -108,12 +110,12 @@ the xsl:for-each changes the current node and current node list.
 
 Whitespace-only text nodes in an XSLT stylesheet are considered insignificant and are stripped from the stylesheet tree before XSLT processing begins—except when they occur inside xsl:text elements or elements with the declaration xml:space="preserve". 
 
-Whitespace stripping is also an optional process that can be applied to the source tree before XSLT processing begins. 
+Whitespace stripping is also an optional process that can be applied to the source tree before XSLT processing begins.
 By default, unlike the stylesheet tree, all whitespace is preserved in the source tree.
 
-XSLT processing is primarily concerned with constructing a result tree. 
-Serialization involves converting that result tree to an actual XML stream or file. 
-The xsl:output element is a top-level element that lets you give hints to the XSLT processor about how you want your result tree to be serialized. 
+XSLT processing is primarily concerned with constructing a result tree.
+Serialization involves converting that result tree to an actual XML stream or file.
+The xsl:output element is a top-level element that lets you give hints to the XSLT processor about how you want your result tree to be serialized.
 Technically, the XSLT processor is not required to heed the hints you give it (or even to serialize the result tree at all), but if it does heed your hints, it must follow the rules for interpreting the xsl:output element.
 
 
@@ -325,3 +327,6 @@ The default axis in XPath is the child axis. You can change the axis by prefixin
 the <xsl:apply-templates/> will not include attribute and namespace node, they are not the children of there parent node.
 https://docstore.mik.ua/orelly/xml/xmlnut/ch08_07.htm#:~:text=XSLT%20provides%20a%20default%20built,nodes%20of%20a%20given%20type.
 @* is short for attribute::* and selects all attributes of the context node
+
+XSpec test doc.
+https://github.com/xspec/xspec/wiki/Writing-Scenarios
