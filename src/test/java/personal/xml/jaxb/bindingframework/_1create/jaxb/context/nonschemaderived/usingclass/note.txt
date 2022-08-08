@@ -17,3 +17,7 @@ it is an example of using index.
 Note 3:
 the @XmlAccessorType's default value is public field or public getter and setter.
 I guess, for getter and setter are used when marshaller or unmarshaller, if you want to unmarshaller and then marshaller, you have to define public getter and setter same time.
+
+Note 4:
+the required = true is not for validation purpose, it is only for documentation purpose.
+https://stackoverflow.com/questions/2669632/jaxb-required-true-doesnt-seem-to-require

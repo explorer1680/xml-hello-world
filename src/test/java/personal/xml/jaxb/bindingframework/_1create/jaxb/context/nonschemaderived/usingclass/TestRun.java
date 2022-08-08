@@ -19,6 +19,9 @@ public class TestRun {
 		
 		AirPlane airbus330 = new AirPlane("A330");
 		Flight ac032 = new Flight("AC032", airbus330);
+//		Flight ac032 = new Flight();
+//		ac032.setAircraftType(airbus330);
+//		ac032.setOnTime(false);
 		
 		marshaller.marshal(ac032, sw);
 		

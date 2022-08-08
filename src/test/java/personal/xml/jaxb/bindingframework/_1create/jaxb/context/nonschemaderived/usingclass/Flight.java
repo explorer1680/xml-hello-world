@@ -2,6 +2,7 @@ package personal.xml.jaxb.bindingframework._1create.jaxb.context.nonschemaderive
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -10,6 +11,9 @@ public class Flight {
 
 	private String flightNumber;
 	private AirPlane aircraftType;
+	
+	@XmlAttribute(name ="isontime", required = true)
+	private Boolean onTime;
 
 	public Flight() {
 		super();
@@ -36,4 +40,14 @@ public class Flight {
 	public void setAircraftType(AirPlane aircraftType) {
 		this.aircraftType = aircraftType;
 	}
+
+	public Boolean getOnTime() {
+		return onTime;
+	}
+
+	public void setOnTime(Boolean onTime) {
+		this.onTime = onTime;
+	}
+	
+	
 }
