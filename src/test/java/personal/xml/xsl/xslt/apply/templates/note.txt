@@ -5,7 +5,7 @@ we can use the <xsl:template match="..."> only, or we can use it with <xsl:apply
 the <xsl:apply-templates> is not necessary at all. 
 If <xsl:template match="/"> is defined, this is the entry point of the whole process.
 
-Regardless of what your stylesheet contains, XSLT processing always begins with a virtual call to: call to <xsl:apply-templates select="/"/> . 
+Regardless of what your stylesheet contains, XSLT processing always begins with a virtual call to: call to <xsl:apply-templates select="/"/> . 				***
 https://stackoverflow.com/questions/1531664/in-what-order-do-templates-in-an-xslt-document-execute-and-do-they-match-on-the
 
 This virtual call constructs the entire result tree, which, after all, is the point of executing a stylesheet.
@@ -15,23 +15,25 @@ the <xsl:apply-templates> should be inside of <xsl:template match="...">.
 
 The <xsl:apply-templates> element first selects a set of nodes using the expression specified in the select attribute.
 If this attribute is left unspecified, it is:
-	<xsl:apply-templates select="node()"/>
+	<xsl:apply-templates select="node()"/>											***
 all children of the current node are selected. (current node means the node specified by the surrounding <xsl:template match="...">.
-(note, the select attribute is to select nodes, not for 'matching' template name attribute)
+(note, the select attribute is to select nodes, not for 'matching' template "name" attribute)
 (if the node is not selected, then no action will do on it)
 the <apply-templates> element illustrates the recursive nature of XSLT processing.
 the recursion continues as long as the xsl:apply-templates instruction appears inside an instantiated template rule and is given a non-empty list of nodes to process. 
 This process continues until there are no more nodes to process. 
 At that point, the entire result tree has been constructed.
 
-the select attribute applies templates to the child nodes of the current node. 
+the select attribute find the child nodes of the current node to apply template.														***
 In other words, it populates the current node list with the set of nodes returned by the select expression, and it iterates over them in document order, invoking the best-matching template rule for each node.
+(the "iterates over them in document order" means if the single "apply-templates" "select" return multiple node, they are in the document order,
+but if the multiple "apply-templates" "select" exists, the order is same as the "apply-templates" order)
 
 Please note, the <xsl:apply-templates>/<xsl:if> only check the node under(from) the <xsl:template> match attribute.
 
 It is possible to make xsl:apply-templates iterate over a node-set in an order other than document order. (xsl:sort)
 
-For each of the selected nodes, <xsl:apply-templates> directs the XSLT processor to find an appropriate <xsl:template> to apply.
+For each of the selected nodes, <xsl:apply-templates> directs the XSLT processor to find an appropriate <xsl:template> to apply.		****
 
 The value of the match attribute of <xsl:template> is an XSLT pattern. 
 Unlike an XPath expression, a pattern is not concerned with selecting a set of nodes from a given context.
@@ -39,6 +41,8 @@ Instead, it has a more passive role. The template rule effectively announces “
 The allowed syntax for a pattern is a subset of the allowed syntax for XPath expressions.
 
 A node matches a pattern if the node is a member of the result of evaluating the pattern as an expression with respect to some possible context node.
+(evaluating the pattern as an expression, from root or from current node, we we get the "possible nodes", if the node included from this "possible nodes",
+it is match)
 
 Because patterns allow only downward-looking axes (child, attribute, and //), 
 the “possible context node” will always be one of the node's ancestors (or the node itself in the case of the pattern “/”).
@@ -87,6 +91,14 @@ Built-in rule for text and attribute:
 	
 other rule can be found on the last part of this doc.
 
+why the attribute are not print out when <apply-template/> exist?
+Because the the <apply-template/> -> <xsl:apply-templates select="node()"/>, the node() don't include the attribute of current element.
+to print it, you have to define your own rule:
+<xsl:template match="*">					//match="*" will include node() and attribute
+    <xsl:apply-templates select="@*"/>
+    <xsl:apply-templates/>
+</xsl:template>
+https://stackoverflow.com/questions/2835404/xslt-built-in-template-rules-for-attributes
 
 The content of the xsl:template element (following zero or more optional xsl:param elements) is a “template” for constructing part of the result tree. 
 This “template” can contain both elements and text. 
